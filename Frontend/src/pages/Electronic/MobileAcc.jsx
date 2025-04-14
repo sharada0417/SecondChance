@@ -16,12 +16,12 @@ const MobileAcc = () => {
         <div className="flex flex-wrap justify-center gap-6">
           {[ 
             { label: "📱 Smartphones", to: "/mobilephone" },
-            { label: "📦 Phone Cases & Covers", to: "/dashboard" },
-            { label: "🔌 Chargers & Power Banks", to: "/postadd" },
-            { label: "🎧 Headphones & Earbuds", to: "/postadd" },
-            { label: "🛡️ Screen Protectors", to: "/postadd" },
-            { label: "📍 Phone Holders & Stands", to: "/postadd" },
-            { label: "⌚ Smartwatches & Fitness Trackers", to: "/postadd" },
+            { label: "📦 Phone Cases & Covers", to: "/phoneCase" },
+            { label: "🔌 Chargers & Power Banks", to: "/charges" },
+            { label: "🎧 Headphones & Earbuds", to: "/headphones" },
+            { label: "🛡️ Screen Protectors", to: "/screenprotector" },
+            { label: "📍 Phone Holders & Stands", to: "/phoneholders" },
+            { label: "⌚ Smartwatches & Fitness Trackers", to: "/smartwatch" },
           ].map((item, index) => (
             <Link
               key={index}
