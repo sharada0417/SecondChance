@@ -50,12 +50,16 @@ const components4 = [
 const Homepage = () => {
   return (
     <>
-     <div className="flex flex-col items-center bg-gradient-to-br from-green-400 via-green-500 to-green-600 p-8 shadow-2xl">
-
+      <div className="flex flex-col items-center bg-gradient-to-br from-green-400 via-green-500 to-green-600 p-8 shadow-2xl">
         {/* Title */}
         <h1 className="text-5xl font-bold text-white drop-shadow-xl mb-6">
           ♻️ Second Chance
         </h1>
+
+        {/* Introduction */}
+        <p className="text-lg text-white mb-6 text-justify w-full">
+          Welcome to Second Chance! We're an e-commerce store dedicated to offering only the best quality second-hand items. At Second Chance, we focus on giving pre-loved products a new life by recycling and reselling top-notch, gently used items. Shop sustainably and find amazing deals on mobile accessories, electronics, furniture, fashion, and much more!
+        </p>
 
         {/* Search */}
         <div className="flex w-full max-w-lg items-center space-x-2 mb-8">
