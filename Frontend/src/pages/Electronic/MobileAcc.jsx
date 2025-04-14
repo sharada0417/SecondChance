@@ -15,7 +15,7 @@ const MobileAcc = () => {
       <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
         <div className="flex flex-wrap justify-center gap-6">
           {[ 
-            { label: "📱 Smartphones", to: "/home" },
+            { label: "📱 Smartphones", to: "/mobilephone" },
             { label: "📦 Phone Cases & Covers", to: "/dashboard" },
             { label: "🔌 Chargers & Power Banks", to: "/postadd" },
             { label: "🎧 Headphones & Earbuds", to: "/postadd" },
