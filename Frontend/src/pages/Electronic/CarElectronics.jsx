@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from "react-router";
 
-const MobileAcc = () => {
+const CarElectronics = () => {
   return (
     <>
       {/* Header Section */}
       <div className="flex flex-col items-center bg-gradient-to-r from-green-400 via-green-500 to-green-600 p-8 shadow-2xl">
         <h3 className="text-4xl font-extrabold text-white mb-2 drop-shadow-md tracking-wide">
-          📱 Mobile & Accessories
+            Home Electronic
         </h3>
       </div>
 
@@ -15,13 +15,11 @@ const MobileAcc = () => {
       <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
         <div className="flex flex-wrap justify-center gap-6">
           {[ 
-            { label: " Smartphones", to: "/mobileacc/mobilephone" },
-            { label: "Phone Cases & Covers", to: "/mobileacc/phoneCase" },
-            { label: " Chargers & Power Banks", to: "/mobileacc/charges" },
-            { label: " Headphones & Earbuds", to: "/mobileacc/headphones" },
-            { label: " Screen Protectors", to: "/mobileacc/screenprotector" },
-            { label: "Phone Holders & Stands", to: "/mobileacc/phoneholders" },
-            { label: " Smartwatches & Fitness Trackers", to: "/mobileacc/smartwatch" },
+            { label: "Car Stereos", to: "/carelectronics/carstereos" },
+            { label: "Dash Cams", to: "/carelectronics/dashcams" },
+            { label: "Parking Cameras", to: "/carelectronics/parkingcameras" },
+            { label: "Car Chargers", to: "/carelectronics/carchargers" },
+            { label: "Car Air Purifiers", to: "/carelectronics/carairpurifiers" },
           ].map((item, index) => (
             <Link
               key={index}
@@ -37,4 +35,4 @@ const MobileAcc = () => {
   );
 };
 
-export default MobileAcc;
+export default CarElectronics;

@@ -1,13 +1,14 @@
 import Navigation from "@/components/Navigation"
+import AudioEntertainment from "@/pages/Electronic/AudioEntertainment"
 import MobileAcc from "@/pages/Electronic/MobileAcc"
 import { Outlet } from "react-router"
 
-function Electronic(){
+function AudioEntertainmentlayout(){
     return(
         <>
-        <MobileAcc/>
+        <AudioEntertainment/>
         <Outlet/>
         </>
     )
 }
-export default Electronic
+export default AudioEntertainmentlayout
