@@ -15,11 +15,11 @@ const AudioEntertainment = () => {
       <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
         <div className="flex flex-wrap justify-center gap-6">
           {[ 
-            { label: "Headphones", to: "/audioentertainment/headphones" },
-            { label: "Bluetooth Speakers", to: "/audioentertainment/bluetoothspeakers" },
-            { label: "Soundbars", to: "/audioentertainment/soundbars" },
-            { label: "Microphones", to: "/audioentertainment/microphones" },
-            { label: "Audio Interfaces", to: "/audioentertainment/audiointerfaces" },
+            { label: "Headphones", to: "/electronic/audioentertainment/headphones" },
+            { label: "Bluetooth Speakers", to: "/electronic/audioentertainment/bluetoothspeakers" },
+            { label: "Soundbars", to: "/electronic/audioentertainment/soundbars" },
+            { label: "Microphones", to: "/electronic/audioentertainment/microphones" },
+            { label: "Audio Interfaces", to: "/electronic/audioentertainment/audiointerfaces" },
           ].map((item, index) => (
             <Link
               key={index}

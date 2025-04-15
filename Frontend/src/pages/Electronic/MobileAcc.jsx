@@ -15,13 +15,13 @@ const MobileAcc = () => {
       <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
         <div className="flex flex-wrap justify-center gap-6">
           {[ 
-            { label: " Smartphones", to: "/mobileacc/mobilephone" },
-            { label: "Phone Cases & Covers", to: "/mobileacc/phoneCase" },
-            { label: " Chargers & Power Banks", to: "/mobileacc/charges" },
-            { label: " Headphones & Earbuds", to: "/mobileacc/headphones" },
-            { label: " Screen Protectors", to: "/mobileacc/screenprotector" },
-            { label: "Phone Holders & Stands", to: "/mobileacc/phoneholders" },
-            { label: " Smartwatches & Fitness Trackers", to: "/mobileacc/smartwatch" },
+            { label: " Smartphones", to: "/electronic/mobileacc/mobilephone" },
+            { label: "Phone Cases & Covers", to: "/electronic/mobileacc/phoneCase" },
+            { label: " Chargers & Power Banks", to: "/electronic/mobileacc/charges" },
+            { label: " Headphones & Earbuds", to: "/electronic/mobileacc/headphones" },
+            { label: " Screen Protectors", to: "/electronic/mobileacc/screenprotector" },
+            { label: "Phone Holders & Stands", to: "/electronic/mobileacc/phoneholders" },
+            { label: " Smartwatches & Fitness Trackers", to: "/electronic/mobileacc/smartwatch" },
           ].map((item, index) => (
             <Link
               key={index}

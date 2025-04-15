@@ -15,11 +15,11 @@ const KitchenAppliances = () => {
       <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
         <div className="flex flex-wrap justify-center gap-6">
           {[ 
-            { label: "Mixer Grinders", to: "/kitchenappliances/mixergrinders" },
-            { label: "Microwave Ovens", to: "/kitchenappliances/microwaveovens" },
-            { label: "Coffee Makers", to: "/kitchenappliances/coffeeMakers" },
-            { label: "Induction Cooktops", to: "/kitchenappliances/inductioncooktops" },
-            { label: "Toasters", to: "/kitchenappliances/toasters" },
+            { label: "Mixer Grinders", to: "/electronic/kitchenappliances/mixergrinders" },
+            { label: "Microwave Ovens", to: "/electronic/kitchenappliances/microwaveovens" },
+            { label: "Coffee Makers", to: "/electronic/kitchenappliances/coffeeMakers" },
+            { label: "Induction Cooktops", to: "/electronic/kitchenappliances/inductioncooktops" },
+            { label: "Toasters", to: "/electronic/kitchenappliances/toasters" },
           ].map((item, index) => (
             <Link
               key={index}

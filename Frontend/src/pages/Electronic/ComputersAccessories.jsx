@@ -15,11 +15,11 @@ const ComputersAccessories = () => {
       <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
         <div className="flex flex-wrap justify-center gap-6">
           {[ 
-            { label: "Laptops", to: "/computersaccessories/laptops" },
-            { label: "Monitors", to: "/computersaccessories/monitors" },
-            { label: "Keyboards & Mice", to: "/computersaccessories/keyboardsmice" },
-            { label: "Printers", to: "/computersaccessories/printers" },
-            { label: "Hard Drives", to: "/computersaccessories/harddrives" },
+            { label: "Laptops", to: "/electronic/computersaccessories/laptops" },
+            { label: "Monitors", to: "/electronic/computersaccessories/monitors" },
+            { label: "Keyboards & Mice", to: "/electronic/computersaccessories/keyboardsmice" },
+            { label: "Printers", to: "/electronic/computersaccessories/printers" },
+            { label: "Hard Drives", to: "/electronic/computersaccessories/harddrives" },
           ].map((item, index) => (
             <Link
               key={index}

@@ -15,11 +15,11 @@ const HomeElectronics = () => {
         <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
           <div className="flex flex-wrap justify-center gap-6">
             {[ 
-              { label: "Televisions", to: "/homeelectronic/televishion" },
-              { label: "HomeTheater", to: "/homeelectronic/hometheter" },
-              { label: "Refrigerators", to: "/homeelectronic/refrigerators" },
-              { label: "Air Conditioners", to: "/homeelectronic/aircondition" },
-              { label: "Washing Machines", to: "/homeelectronic/washingmachine" },
+              { label: "Televisions", to: "/electronic/homeelectronic/televishion" },
+              { label: "HomeTheater", to: "/electronic/homeelectronic/hometheter" },
+              { label: "Refrigerators", to: "/electronic/homeelectronic/refrigerators" },
+              { label: "Air Conditioners", to: "/electronic/homeelectronic/aircondition" },
+              { label: "Washing Machines", to: "/electronic/homeelectronic/washingmachine" },
             ].map((item, index) => (
               <Link
                 key={index}

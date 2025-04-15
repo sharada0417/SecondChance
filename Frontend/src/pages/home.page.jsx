@@ -13,12 +13,12 @@ import {
 
 // Updated with emojis
 const components1 = [
-  { title: "📱 Mobile & Accessories", href: "/mobileacc/mobilephone" },
-  { title: "📺 Home Electronics", href: "/homeelectronic/televishion" },
-  { title: "💻 Computers & Accessories", href: "/computersaccessories/laptops" },
-  { title: "🎧 Audio & Entertainment", href: "/audioentertainment/headphones" },
-  { title: "🍳 Kitchen Appliances", href: "/kitchenappliances/mixergrinders" },
-  { title: "🚗 Car Electronics", href: "/carelectronics/carstereos" },
+  { title: "📱 Mobile & Accessories", href: "/electronic/mobileacc/mobilephone" },
+  { title: "📺 Home Electronics", href: "/electronic/homeelectronic/televishion" },
+  { title: "💻 Computers & Accessories", href: "/electronic/computersaccessories/laptops" },
+  { title: "🎧 Audio & Entertainment", href: "/electronic/audioentertainment/headphones" },
+  { title: "🍳 Kitchen Appliances", href: "/electronic/kitchenappliances/mixergrinders" },
+  { title: "🚗 Car Electronics", href: "/electronic/carelectronics/carstereos" },
 ];
 
 const components2 = [
