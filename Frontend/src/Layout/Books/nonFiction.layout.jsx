@@ -1,13 +1,16 @@
+import  nonFiction from "@/pages/Books/nonFiction"
 import React from 'react'
 import { Outlet } from 'react-router'
-import nonFictions from '@/pages/Books/nonFiction'
-function nonFictionlayout ()  {
+
+function nonFictionlayout () {
   return (
     <>
-    <nonFictions/>
+    <nonFiction/>
      <Outlet/>
     </>
   )
 }
 
 export default nonFictionlayout
+
+

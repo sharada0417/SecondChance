@@ -2,9 +2,8 @@ import React from 'react'
 import BHeader from './BHeader';
 import { Link } from "react-router";
 
-const nonFictions = () => {
+const nonFiction = () => {
   return (
-     
     <>
       <BHeader/>
 
@@ -32,4 +31,9 @@ const nonFictions = () => {
   );
 }
 
-export default nonFictions
+export default nonFiction
+
+
+
+
+
