@@ -65,14 +65,13 @@ createRoot(document.getElementById("root")).render(
 
 
 
-              {/*Electronic ection*/}
+              {/*------------- Electronic section ---------------------------*/}
               <Route path="/electronic/mobileacc" element={<MobileAcc />} />
               <Route path="/electronic/homeelectronics" element={<HomeElectronics />} />
               <Route path="/electronic/computersaccessories" element={<ComputersAccessories />} />
               <Route path="/electronic/audioentertainment" element={<AudioEntertainment />} />
               <Route path="/electronic/kitchenappliances" element={<KitchenAppliances />} />
               <Route path="/electronic/carelectronics" element={<CarElectronics />} />
-
               {/* Mobile Accessories */}
               <Route element={<MobileAcclayout />}>
                 <Route path="/electronic/mobileacc/mobilephone" element={<MobilePhones />} />
@@ -83,7 +82,6 @@ createRoot(document.getElementById("root")).render(
                 <Route path="/electronic/mobileacc/smartwatch" element={<SmartWatch />} />
                 <Route path="/electronic/mobileacc/phoneholders" element={<PhoneHolders />} />
               </Route>
-
               {/* Home Electronics */}
               <Route element={<HomeElectroniclayout />}>
                 <Route path="/electronic/homeelectronic/televishion" element={<Televisions />} />
@@ -92,7 +90,6 @@ createRoot(document.getElementById("root")).render(
                 <Route path="/electronic/homeelectronic/aircondition" element={<AirConditioners />} />
                 <Route path="/electronic/homeelectronic/washingmachine" element={<WashingMachines />} />
               </Route>
-
               {/* Computers Accessories */}
               <Route element={<ComputersAccessorieslayout />}>
                 <Route path="/electronic/computersaccessories/laptops" element={<Laptops />} />
@@ -101,7 +98,6 @@ createRoot(document.getElementById("root")).render(
                 <Route path="/electronic/computersaccessories/printers" element={<Printers />} />
                 <Route path="/electronic/computersaccessories/harddrives" element={<HardDrives />} />
               </Route>
-
               {/* Audio Entertainment */}
               <Route element={<AudioEntertainmentlayout />}>
                 <Route path="/electronic/audioentertainment/headphones" element={<Headphones />} />
@@ -128,6 +124,77 @@ createRoot(document.getElementById("root")).render(
                 <Route path="/electronic/carelectronics/carchargers" element={<CarChargers />} />
                 <Route path="/electronic/carelectronics/carairpurifiers" element={<CarAirPurifiers />} />
               </Route>
+
+
+
+
+
+
+
+
+
+
+
+             {/*------------- Furnities ---------------------------*/}
+             <Route path="/electronic/mobileacc" element={<MobileAcc />} />
+              <Route path="/electronic/homeelectronics" element={<HomeElectronics />} />
+              <Route path="/electronic/computersaccessories" element={<ComputersAccessories />} />
+              <Route path="/electronic/audioentertainment" element={<AudioEntertainment />} />
+              <Route path="/electronic/kitchenappliances" element={<KitchenAppliances />} />
+              <Route path="/electronic/carelectronics" element={<CarElectronics />} />
+              {/* Mobile Accessories */}
+              <Route element={<MobileAcclayout />}>
+                <Route path="/electronic/mobileacc/mobilephone" element={<MobilePhones />} />
+                <Route path="/electronic/mobileacc/charges" element={<ChargesAndCovers />} />
+                <Route path="/electronic/mobileacc/headphones" element={<HeadPhones />} />
+                <Route path="/electronic/mobileacc/phoneCase" element={<PhoneCaseAndCover />} />
+                <Route path="/electronic/mobileacc/screenprotector" element={<ScreenProtector />} />
+                <Route path="/electronic/mobileacc/smartwatch" element={<SmartWatch />} />
+                <Route path="/electronic/mobileacc/phoneholders" element={<PhoneHolders />} />
+              </Route>
+              {/* Home Electronics */}
+              <Route element={<HomeElectroniclayout />}>
+                <Route path="/electronic/homeelectronic/televishion" element={<Televisions />} />
+                <Route path="/electronic/homeelectronic/hometheter" element={<HomeTheater />} />
+                <Route path="/electronic/homeelectronic/refrigerators" element={<Refrigerators />} />
+                <Route path="/electronic/homeelectronic/aircondition" element={<AirConditioners />} />
+                <Route path="/electronic/homeelectronic/washingmachine" element={<WashingMachines />} />
+              </Route>
+              {/* Computers Accessories */}
+              <Route element={<ComputersAccessorieslayout />}>
+                <Route path="/electronic/computersaccessories/laptops" element={<Laptops />} />
+                <Route path="/electronic/computersaccessories/monitors" element={<Monitors />} />
+                <Route path="/electronic/computersaccessories/keyboardsmice" element={<HeadPhones />} />
+                <Route path="/electronic/computersaccessories/printers" element={<Printers />} />
+                <Route path="/electronic/computersaccessories/harddrives" element={<HardDrives />} />
+              </Route>
+              {/* Audio Entertainment */}
+              <Route element={<AudioEntertainmentlayout />}>
+                <Route path="/electronic/audioentertainment/headphones" element={<Headphones />} />
+                <Route path="/electronic/audioentertainment/bluetoothspeakers" element={<BluetoothSpeakers />} />
+                <Route path="/electronic/audioentertainment/soundbars" element={<Soundbars />} />
+                <Route path="/electronic/audioentertainment/microphones" element={<Microphones />} />
+                <Route path="/electronic/audioentertainment/audiointerfaces" element={<AudioInterfaces />} />
+              </Route>
+
+              {/* Kitchen Appliances */}
+              <Route element={<KitchenApplianceslayout />}>
+                <Route path="/electronic/kitchenappliances/coffeemakers" element={<CoffeeMakers />} />
+                <Route path="/electronic/kitchenappliances/inductioncooktops" element={<InductionCooktops />} />
+                <Route path="/electronic/kitchenappliances/microwaveovens" element={<MicrowaveOvens />} />
+                <Route path="/electronic/kitchenappliances/mixergrinders" element={<MixerGrinders />} />
+                <Route path="/electronic/kitchenappliances/toasters" element={<Toasters />} />
+              </Route>
+
+              {/* Car Electronics */}
+              <Route element={<CarElectronicslayout />}>
+                <Route path="/electronic/carelectronics/carstereos" element={<CarStereos />} />
+                <Route path="/electronic/carelectronics/dashcams" element={<DashCams />} />
+                <Route path="/electronic/carelectronics/parkingcameras" element={<ParkingCameras />} />
+                <Route path="/electronic/carelectronics/carchargers" element={<CarChargers />} />
+                <Route path="/electronic/carelectronics/carairpurifiers" element={<CarAirPurifiers />} />
+              </Route>
+
 
             </Route>
           </Route>
