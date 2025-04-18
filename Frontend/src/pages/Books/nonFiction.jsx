@@ -11,11 +11,11 @@ const nonFiction = () => {
       <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
         <div className="flex flex-wrap justify-center gap-6">
           {[ 
-             { label: "", to: "" },
-             { label: "", to: "" },
-             { label: "", to: "" },
-             { label: "", to: "" },
-             { label: "", to: "" },
+             { label: "Biographies", to: "books/nonfiction/biographies" },
+             { label: "Fitness", to: "books/nonfiction/fitness" },
+             { label: "Self help", to: "books/nonfiction/selfhelp" },
+             { label: "Travel", to: "books/nonfiction/travel" },
+             { label: "True crime", to: "books/nonfiction/truecrime" },
           ].map((item, index) => (
             <Link
               key={index}
