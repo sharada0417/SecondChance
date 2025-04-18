@@ -23,10 +23,10 @@ const components1 = [
 
 const components2 = [
   { title: "🛏️ Bedroom Furniture", href: "/furnitures/bedroom/beds" },
-  { title: "🛋️ Living Room Furniture", href: "/furnitures/diningroom/barunits" },
-  { title: "🍽️ Dining Room Furniture", href: "/furnitures/kids/bookshelves" },
-  { title: "💼 Office Furniture", href: "/furnitures/livingroom/coffeetables" },
-  { title: "🧒 Kids Furniture", href: "/furnitures/officeroom/bookshelves" },
+  { title: "🛋️ Living Room Furniture", href: "/furnitures/livingroom/coffeetables" },
+  { title: "🍽️ Dining Room Furniture", href: "/furnitures/diningroom/barunits" },
+  { title: "💼 Office Furniture", href: "/furnitures/officeroom/bookshelves" },
+  { title: "🧒 Kids Furniture", href: "/furnitures/kids/bookshelves" },
   { title: "🌳 Outdoor Furniture", href: "/furnitures/outdoor/gardentables" },
 ];
 
