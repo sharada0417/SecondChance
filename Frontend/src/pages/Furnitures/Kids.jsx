@@ -11,11 +11,11 @@ const Kids = () => {
       <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
         <div className="flex flex-wrap justify-center gap-6">
           {[ 
-            { label: "Headphones", to: "/electronic/audioentertainment/headphones" },
-            { label: "Bluetooth Speakers", to: "/electronic/audioentertainment/bluetoothspeakers" },
-            { label: "Soundbars", to: "/electronic/audioentertainment/soundbars" },
-            { label: "Microphones", to: "/electronic/audioentertainment/microphones" },
-            { label: "Audio Interfaces", to: "/electronic/audioentertainment/audiointerfaces" },
+            { label: "Book Shelves", to: "/furnitures/kids/bookshelves" },
+            { label: "Kids Beds", to: "/furnitures/kids/kidsbeds" },
+            { label: "Kids Chairs", to: "/furnitures/kids/kidschairs" },
+            { label: "Study Tables", to: "/furnitures/kids/studytables" },
+            { label: "Toy Storage", to: "/furnitures/kids/toystorage" },
           ].map((item, index) => (
             <Link
               key={index}
