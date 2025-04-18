@@ -35,7 +35,7 @@ const components3 = [
   { title: "👗 Women's Fashion", href: "/docs/primitives/hover-card" },
   { title: "🧒 Kids Fashion", href: "/docs/primitives/progress" },
   { title: "👟 Footwear", href: "/docs/primitives/scroll-area" },
-  { title: "👜 Accessories", href: "/docs/primitives/tabs" },
+  { title: "👜 Accessories", href: "/fashion/accessories/bags" },
 ];
 
 const components4 = [
