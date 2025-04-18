@@ -11,11 +11,11 @@ const Business = () => {
       <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
         <div className="flex flex-wrap justify-center gap-6">
           {[ 
-            { label: "Headphones", to: "/electronic/audioentertainment/headphones" },
-            { label: "Bluetooth Speakers", to: "/electronic/audioentertainment/bluetoothspeakers" },
-            { label: "Soundbars", to: "/electronic/audioentertainment/soundbars" },
-            { label: "Microphones", to: "/electronic/audioentertainment/microphones" },
-            { label: "Audio Interfaces", to: "/electronic/audioentertainment/audiointerfaces" },
+            { label: "Finance", to: "books/business/finance" },
+            { label: "Law", to: "books/business/law" },
+            { label: "Management", to: "books/business/management" },
+            { label: "Marketing", to: "books/business/marketing" },
+            { label: "Strategy", to: "books/business/strategy" },
           ].map((item, index) => (
             <Link
               key={index}
