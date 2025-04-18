@@ -104,6 +104,33 @@ import OutdoorBenches from "./pages/Furnitures/OutDoor/OutdoorBenches";
 import OutdoorSwings from "./pages/Furnitures/OutDoor/OutdoorSwings";
 import PatioSets from "./pages/Furnitures/OutDoor/PatioSets";
 import Hammocks from "./pages/Furnitures/OutDoor/Hammocks";
+import Accessories from "./pages/Fashion/Accessories";
+import FootWare from "./pages/Fashion/FootWare";
+import Men from "./pages/Fashion/Men";
+import Women from "./pages/Fashion/Women";
+import Bags from "./pages/Fashion/Accessories/Bags";
+import Belts from "./pages/Fashion/Accessories/Belts";
+import Jewelry from "./pages/Fashion/Accessories/Jewelry";
+import Sunglasses from "./pages/Fashion/Accessories/Sunglasses";
+import Watches from "./pages/Fashion/Accessories/Watches";
+import Boots from "./pages/Fashion/FootWare/Boots";
+import CasualShoes from "./pages/Fashion/FootWare/CasualShoes";
+import FormalShoes from "./pages/Fashion/FootWare/FormalShoes";
+import Sandals from "./pages/Fashion/FootWare/Sandals";
+import SportsShoes from "./pages/Fashion/FootWare/SportsShoes";
+import EthnicWear from "./pages/Fashion/Kids/EthnicWear";
+import Footwear from "./pages/Fashion/Kids/Footwear";
+import Frocks from "./pages/Fashion/Kids/Frocks";
+import Pants from "./pages/Fashion/Kids/Pants";
+import TShirts from "./pages/Fashion/Kids/TShirts";
+import Jackets from "./pages/Fashion/Men/Jackets";
+import Jeans from "./pages/Fashion/Men/Jeans";
+import Shirts from "./pages/Fashion/Men/Shirts";
+import Dresses from "./pages/Fashion/Women/Dresses";
+import Handbags from "./pages/Fashion/Women/Handbags";
+import Kurtis from "./pages/Fashion/Women/Kurtis";
+import Sarees from "./pages/Fashion/Women/Sarees";
+import Tops from "./pages/Fashion/Women/Tops";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -250,54 +277,52 @@ createRoot(document.getElementById("root")).render(
 
 
               {/*------------- Fashion ---------------------------*/}
-             <Route path="" element={<MobileAcc />} />
-              <Route path="" element={<HomeElectronics />} />
-              <Route path="" element={<ComputersAccessories />} />
-              <Route path="" element={<AudioEntertainment />} />
-              <Route path="" element={<KitchenAppliances />} />
-              <Route path="" element={<CarElectronics />} />
+             <Route path="/fashion/accessories" element={<Accessories />} />
+              <Route path="/fashion/footware" element={<FootWare />} />
+              <Route path="/fashion/kids" element={<Kids />} />
+              <Route path="/fashion/men" element={<Men />} />
+              <Route path="/fashion/women" element={<Women />} />
               {/* Accseries */}
               <Route element={<Accessorieslayout />}>
-                <Route path="" element={<MobilePhones />} />
-                <Route path="" element={<ChargesAndCovers />} />
-                <Route path="" element={<HeadPhones />} />
-                <Route path="" element={<PhoneCaseAndCover />} />
-                <Route path="" element={<ScreenProtector />} />
-                <Route path="" element={<SmartWatch />} />
-                <Route path="" element={<PhoneHolders />} />
+                <Route path="/fashion/accessories/bags" element={<Bags />} />
+                <Route path="/fashion/accessories/belts" element={<Belts />} />
+                <Route path="/fashion/accessories/headphones" element={<HeadPhones />} />
+                <Route path="/fashion/accessories/jewelry" element={<Jewelry />} />
+                <Route path="/fashion/accessories/sunglasses" element={<Sunglasses />} />
+                <Route path="/fashion/accessories/watches" element={<Watches />} />
               </Route>
               {/* FootWare */}
               <Route element={<FootWarelayout />}>
-                <Route path="" element={<Televisions />} />
-                <Route path="" element={<HomeTheater />} />
-                <Route path="" element={<Refrigerators />} />
-                <Route path="" element={<AirConditioners />} />
-                <Route path="" element={<WashingMachines />} />
+                <Route path="/fashion/footware/boots" element={<Boots/>} />
+                <Route path="/fashion/footware/casual shoes" element={<CasualShoes />} />
+                <Route path="/fashion/footware/formal shoes" element={<FormalShoes/>} />
+                <Route path="/fashion/footware/sandals" element={<Sandals />} />
+                <Route path="/fashion/footware/sports shoes" element={<SportsShoes />} />
               </Route>
               {/* Kids */}
               <Route element={<KidslayoutF />}>
-                <Route path="" element={<Laptops />} />
-                <Route path="" element={<Monitors />} />
-                <Route path="" element={<HeadPhones />} />
-                <Route path="" element={<Printers />} />
-                <Route path="" element={<HardDrives />} />
+                <Route path="/fashion/kids/ethnicWear" element={<EthnicWear />} />
+                <Route path="/fashion/kids/footwear" element={<Footwear />} />
+                <Route path="/fashion/kids/frocks" element={<Frocks />} />
+                <Route path="/fashion/kids/pants" element={<Pants />} />
+                <Route path="/fashion/kids/tshirts" element={<TShirts />} />
               </Route>
               {/* Men */}
               <Route element={<Menlayout />}>
-                <Route path="" element={<Headphones />} />
-                <Route path="" element={<BluetoothSpeakers />} />
-                <Route path="" element={<Soundbars />} />
-                <Route path="" element={<Microphones />} />
-                <Route path="" element={<AudioInterfaces />} />
+                <Route path="/fashion/men/jackets" element={<Jackets/>} />
+                <Route path="/fashion/men/jeans" element={<Jeans />} />
+                <Route path="/fashion/men/shirts" element={<Shirts />} />
+                <Route path="/fashion/men/tshirts" element={<TShirts />} />
+                <Route path="/fashion/men/watches" element={<Watches/>} />
               </Route>
 
               {/* Women */}
               <Route element={<Womenlayout />}>
-                <Route path="" element={<CoffeeMakers />} />
-                <Route path="" element={<InductionCooktops />} />
-                <Route path="" element={<MicrowaveOvens />} />
-                <Route path="" element={<MixerGrinders />} />
-                <Route path="" element={<Toasters />} />
+                <Route path="/fashion/women/dresses" element={<Dresses />} />
+                <Route path="/fashion/women/handbags" element={<Handbags/>} />
+                <Route path="/fashion/women/kurtis" element={<Kurtis />} />
+                <Route path="/fashion/women/sarees" element={<Sarees />} />
+                <Route path="/fashion/women/tops" element={<Tops/>} />
               </Route>
 
 
