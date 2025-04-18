@@ -22,12 +22,12 @@ const components1 = [
 ];
 
 const components2 = [
-  { title: "🛏️ Bedroom Furniture", href: "/electronic/audioentertainment/headphones" },
-  { title: "🛋️ Living Room Furniture", href: "/docs/primitives/hover-card" },
-  { title: "🍽️ Dining Room Furniture", href: "/docs/primitives/progress" },
-  { title: "💼 Office Furniture", href: "/docs/primitives/scroll-area" },
-  { title: "🧒 Kids Furniture", href: "/docs/primitives/tabs" },
-  { title: "🌳 Outdoor Furniture", href: "/docs/primitives/tooltip" },
+  { title: "🛏️ Bedroom Furniture", href: "/furnitures/bedroom/beds" },
+  { title: "🛋️ Living Room Furniture", href: "/furnitures/diningroom/barunits" },
+  { title: "🍽️ Dining Room Furniture", href: "/furnitures/kids/bookshelves" },
+  { title: "💼 Office Furniture", href: "/furnitures/livingroom/coffeetables" },
+  { title: "🧒 Kids Furniture", href: "/furnitures/officeroom/bookshelves" },
+  { title: "🌳 Outdoor Furniture", href: "/furnitures/outdoor/gardentables" },
 ];
 
 const components3 = [

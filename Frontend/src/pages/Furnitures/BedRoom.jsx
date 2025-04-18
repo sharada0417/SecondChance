@@ -11,11 +11,11 @@ const BedRoom = () => {
     <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
       <div className="flex flex-wrap justify-center gap-6">
         {[ 
-          { label: "Headphones", to: "/electronic/audioentertainment/headphones" },
-          { label: "Bluetooth Speakers", to: "/electronic/audioentertainment/bluetoothspeakers" },
-          { label: "Soundbars", to: "/electronic/audioentertainment/soundbars" },
-          { label: "Microphones", to: "/electronic/audioentertainment/microphones" },
-          { label: "Audio Interfaces", to: "/electronic/audioentertainment/audiointerfaces" },
+          { label: "Beds", to: "/furnitures/bedroom/beds" },
+          { label: "Bedside Tables", to: "/furnitures/bedroom/bedsidetables" },
+          { label: "Dressers", to: "/furnitures/bedroom/dressers" },
+          { label: "Mattresses", to: "/furnitures/bedroom/mattresses" },
+          { label: "Wardrobes", to: "/furnitures/bedroom/wardrobes" },
         ].map((item, index) => (
           <Link
             key={index}
