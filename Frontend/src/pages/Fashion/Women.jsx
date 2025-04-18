@@ -11,11 +11,11 @@ const Women = () => {
       <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
         <div className="flex flex-wrap justify-center gap-6">
           {[ 
-            { label: "Headphones", to: "/electronic/audioentertainment/headphones" },
-            { label: "Bluetooth Speakers", to: "/electronic/audioentertainment/bluetoothspeakers" },
-            { label: "Soundbars", to: "/electronic/audioentertainment/soundbars" },
-            { label: "Microphones", to: "/electronic/audioentertainment/microphones" },
-            { label: "Audio Interfaces", to: "/electronic/audioentertainment/audiointerfaces" },
+            { label: "Dresses", to: "/fashion/women/dresses" },
+            { label: "Handbags", to: "/fashion/women/handbags" },
+            { label: "Kurtis", to: "/fashion/women/kurtis" },
+            { label: "Sarees", to: "/fashion/women/sarees" },
+            { label: "Tops", to: "/fashion/women/tops" },
           ].map((item, index) => (
             <Link
               key={index}
