@@ -1,5 +1,6 @@
 import React from 'react'
 import BHeader from './BHeader';
+import { Link } from "react-router";
 
 const Art = () => {
     return (

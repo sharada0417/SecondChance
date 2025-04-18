@@ -1,7 +1,7 @@
 import Kids from "@/pages/Furnitures/Kids"
 import { Outlet } from "react-router"
 
-function Kidslayout(){
+function KidslayoutF(){
     return(
         <>
         <Kids/>
@@ -9,4 +9,4 @@ function Kidslayout(){
         </>
     )
 }
-export default Kidslayout
+export default KidslayoutF
