@@ -294,10 +294,10 @@ createRoot(document.getElementById("root")).render(
               {/* FootWare */}
               <Route element={<FootWarelayout />}>
                 <Route path="/fashion/footware/boots" element={<Boots/>} />
-                <Route path="/fashion/footware/casual shoes" element={<CasualShoes />} />
-                <Route path="/fashion/footware/formal shoes" element={<FormalShoes/>} />
+                <Route path="/fashion/footware/casualshoes" element={<CasualShoes />} />
+                <Route path="/fashion/footware/formalshoes" element={<FormalShoes/>} />
                 <Route path="/fashion/footware/sandals" element={<Sandals />} />
-                <Route path="/fashion/footware/sports shoes" element={<SportsShoes />} />
+                <Route path="/fashion/footware/sportsshoes" element={<SportsShoes />} />
               </Route>
               {/* Kids */}
               <Route element={<KidslayoutF />}>

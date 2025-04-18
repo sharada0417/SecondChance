@@ -10,11 +10,11 @@ const FootWare = () => {
       <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
         <div className="flex flex-wrap justify-center gap-6">
           {[ 
-            { label: "Headphones", to: "/electronic/audioentertainment/headphones" },
-            { label: "Bluetooth Speakers", to: "/electronic/audioentertainment/bluetoothspeakers" },
-            { label: "Soundbars", to: "/electronic/audioentertainment/soundbars" },
-            { label: "Microphones", to: "/electronic/audioentertainment/microphones" },
-            { label: "Audio Interfaces", to: "/electronic/audioentertainment/audiointerfaces" },
+            { label: "Boots ", to: "/fashion/footware/boots" },
+            { label: "Casual Shoes", to: "/fashion/footware/casualshoes" },
+            { label: "Formal Shoes", to: "/fashion/footware/formalshoes" },
+            { label: "Sandals", to: "/fashion/footware/sandals" },
+            { label: "Sports Shoes", to: "/fashion/footware/sportsshoes" },
           ].map((item, index) => (
             <Link
               key={index}
