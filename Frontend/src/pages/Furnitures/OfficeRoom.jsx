@@ -11,11 +11,11 @@ const OfficeRoom = () => {
     <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
       <div className="flex flex-wrap justify-center gap-6">
         {[ 
-          { label: "Headphones", to: "/electronic/audioentertainment/headphones" },
-          { label: "Bluetooth Speakers", to: "/electronic/audioentertainment/bluetoothspeakers" },
-          { label: "Soundbars", to: "/electronic/audioentertainment/soundbars" },
-          { label: "Microphones", to: "/electronic/audioentertainment/microphones" },
-          { label: "Audio Interfaces", to: "/electronic/audioentertainment/audiointerfaces" },
+          { label: "Book Shelves", to: "/furnitures/officeroom/bookshelves" },
+          { label: "Filing Cabinets", to: "/furnitures/officeroom/filingcabinets" },
+          { label: "Office Chairs", to: "/furnitures/officeroom/officechairs" },
+          { label: "Office tables", to: "/furnitures/officeroom/officetables" },
+          { label: "Work stations", to: "/furnitures/officeroom/workstations" },
         ].map((item, index) => (
           <Link
             key={index}
