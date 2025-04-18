@@ -11,11 +11,11 @@ const Fiction = () => {
       <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
         <div className="flex flex-wrap justify-center gap-6">
           {[ 
-             { label: "", to: "" },
-             { label: "", to: "" },
-             { label: "", to: "" },
-             { label: "", to: "" },
-             { label: "", to: "" },
+             { label: "Historical Fiction", to: "books/fiction/historicalfiction" },
+             { label: "Mystery", to: "books/fiction/mystery" },
+             { label: "Novels", to: "books/fiction/novels" },
+             { label: "Romance", to: "books/fiction/romance" },
+             { label: "SciFi", to: "books/fiction/sciFi" },
           ].map((item, index) => (
             <Link
               key={index}
