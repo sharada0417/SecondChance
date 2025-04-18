@@ -31,20 +31,20 @@ const components2 = [
 ];
 
 const components3 = [
-  { title: "👔 Men's Fashion", href: "/docs/primitives/alert-dialog" },
-  { title: "👗 Women's Fashion", href: "/docs/primitives/hover-card" },
-  { title: "🧒 Kids Fashion", href: "/docs/primitives/progress" },
-  { title: "👟 Footwear", href: "/docs/primitives/scroll-area" },
+  { title: "👔 Men's Fashion", href: "/fashion/men/jackets" },
+  { title: "👗 Women's Fashion", href: "/fashion/women/dresses" },
+  { title: "🧒 Kids Fashion", href: "/fashion/kids/ethnicWear" },
+  { title: "👟 Footwear", href: "/fashion/footware/boots" },
   { title: "👜 Accessories", href: "/fashion/accessories/bags" },
 ];
 
 const components4 = [
-  { title: "📚 Children & Teens", href: "/docs/primitives/alert-dialog" },
-  { title: "📖 Fiction", href: "/docs/primitives/hover-card" },
-  { title: "📘 Non-Fiction", href: "/docs/primitives/progress" },
-  { title: "🏫 Education & Reference", href: "/docs/primitives/scroll-area" },
-  { title: "💼 Business & Professional", href: "/docs/primitives/tabs" },
-  { title: "🎨 Art & Hobbies", href: "/docs/primitives/tooltip" },
+  { title: "📚 Children & Teens", href: "books/children/activitybooks" },
+  { title: "📖 Fiction", href: "books/fiction/historicalfiction" },
+  { title: "📘 Non-Fiction", href: "books/nonfiction/biographies" },
+  { title: "🏫 Education & Reference", href: "books/education/Dictionaries" },
+  { title: "💼 Business & Professional", href: "books/business/finance" },
+  { title: "🎨 Art & Hobbies", href: "books/art/artCraft" },
 ];
 
 const Homepage = () => {

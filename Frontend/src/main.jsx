@@ -131,6 +131,41 @@ import Handbags from "./pages/Fashion/Women/Handbags";
 import Kurtis from "./pages/Fashion/Women/Kurtis";
 import Sarees from "./pages/Fashion/Women/Sarees";
 import Tops from "./pages/Fashion/Women/Tops";
+import Art from "./pages/Books/Art";
+import Business from "./pages/Books/Business";
+import Childern from "./pages/Books/Childern";
+import Education from "./pages/Books/Education";
+import Fiction from "./pages/Books/Fiction";
+import ArtCraft from "./pages/Books/Art/ArtCraft";
+import DIYProject from "./pages/Books/Art/DIYProject";
+import Gardening from "./pages/Books/Art/Gardening";
+import Music from "./pages/Books/Art/Music";
+import Photograpy from "./pages/Books/Art/Photograpy";
+import Finance from "./pages/Books/Business/Finance";
+import Law from "./pages/Books/Business/Law";
+import Management from "./pages/Books/Business/Management";
+import Marketing from "./pages/Books/Business/Marketing";
+import Strategy from "./pages/Books/Business/Strategy";
+import ActivityBooks from "./pages/Books/Childern/ActivityBooks";
+import Comics from "./pages/Books/Childern/Comics";
+import LearningBooks from "./pages/Books/Childern/LearningBooks";
+import SchoolBooks from "./pages/Books/Childern/SchoolBooks";
+import Storybooks from "./pages/Books/Childern/Storybooks";
+import Dictionaries from "./pages/Books/Education/Dictionaries";
+import ExamGuides from "./pages/Books/Education/ExamGuides";
+import LanguageBooks from "./pages/Books/Education/LanguageBooks";
+import ReferenceManuals from "./pages/Books/Education/ReferenceManuals";
+import Textbooks from "./pages/Books/Education/Textbooks";
+import HistoricalFiction from "./pages/Books/Fiction/HistoricalFiction";
+import Mystery from "./pages/Books/Fiction/Mystery";
+import Novels from "./pages/Books/Fiction/Novels";
+import Romance from "./pages/Books/Fiction/Romance";
+import SciFi from "./pages/Books/Fiction/SciFi";
+import Biographies from "./pages/Books/non-Fiction/Biographies";
+import Fitness from "./pages/Books/non-Fiction/Fitness";
+import SelfHelp from "./pages/Books/non-Fiction/SelfHelp";
+import Travel from "./pages/Books/non-Fiction/Travel";
+import TrueCrime from "./pages/Books/non-Fiction/TrueCrime";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -334,63 +369,61 @@ createRoot(document.getElementById("root")).render(
 
 
               {/*------------- Books ---------------------------*/}
-             <Route path="" element={<MobileAcc />} />
-              <Route path="" element={<HomeElectronics />} />
-              <Route path="" element={<ComputersAccessories />} />
-              <Route path="" element={<AudioEntertainment />} />
-              <Route path="" element={<KitchenAppliances />} />
-              <Route path="" element={<CarElectronics />} />
+             <Route path="books/art" element={<Art/>} />
+              <Route path="books/business" element={<Business />} />
+              <Route path="books/children" element={<Childern/>} />
+              <Route path="books/education" element={<Education />} />
+              <Route path="books/fiction" element={<Fiction/>} />
+              <Route path="books/nonfiction" element={<nonFiction />} />
               {/* Art  */}
               <Route element={<Artlayout />}>
-                <Route path="" element={<MobilePhones />} />
-                <Route path="" element={<ChargesAndCovers />} />
-                <Route path="" element={<HeadPhones />} />
-                <Route path="" element={<PhoneCaseAndCover />} />
-                <Route path="" element={<ScreenProtector />} />
-                <Route path="" element={<SmartWatch />} />
-                <Route path="" element={<PhoneHolders />} />
+                <Route path="books/art/artCraft" element={<ArtCraft/>} />
+                <Route path="books/art/dIYProject " element={<DIYProject />} />
+                <Route path="books/art/gardening" element={<Gardening/>} />
+                <Route path="books/art/music" element={<Music />} />
+                <Route path="books/art/photograpy " element={<Photograpy />} />
               </Route>
               {/* Bussiness */}
               <Route element={<Businesslayout/>}>
-                <Route path="" element={<Televisions />} />
-                <Route path="" element={<HomeTheater />} />
-                <Route path="" element={<Refrigerators />} />
-                <Route path="" element={<AirConditioners />} />
-                <Route path="" element={<WashingMachines />} />
+                <Route path="books/business/finance" element={<Finance />} />
+                <Route path="books/business/law" element={<Law/>} />
+                <Route path="books/business/management" element={<Management />} />
+                <Route path="books/business/marketing" element={<Marketing />} />
+                <Route path="books/business/strategy" element={<Strategy/>} />
               </Route>
               {/* Children  */}
               <Route element={<Childernlayout/>}>
-                <Route path="" element={<Laptops />} />
-                <Route path="" element={<Monitors />} />
-                <Route path="" element={<HeadPhones />} />
-                <Route path="" element={<Printers />} />
-                <Route path="" element={<HardDrives />} />
+                <Route path="books/children/activitybooks" element={<ActivityBooks />} />
+                <Route path="books/children/comics" element={<Comics />} />
+                <Route path="books/children/learningBooks" element={<LearningBooks />} />
+                <Route path="books/children/schoolBooks" element={<SchoolBooks />} />
+                <Route path="books/children/storybooks" element={<Storybooks />} />
               </Route>
               {/* Education */}
               <Route element={<Educationlayout />}>
-                <Route path="" element={<Headphones />} />
-                <Route path="" element={<BluetoothSpeakers />} />
-                <Route path="" element={<Soundbars />} />
-                <Route path="" element={<Microphones />} />
-                <Route path="" element={<AudioInterfaces />} />
+                <Route path="books/education/Dictionaries" element={<Dictionaries />} />
+                <Route path="books/education/ExamGuides" element={<ExamGuides />} />
+                <Route path="books/education/languagebooks" element={<LanguageBooks/>} />
+                <Route path="books/education/referencemanual" element={<ReferenceManuals/>} />
+                <Route path="books/education/textbooks" element={<Textbooks/>} />
               </Route>
 
               {/* Fiction */}
               <Route element={<Fictionlayout/>}>
-                <Route path="" element={<CoffeeMakers />} />
-                <Route path="" element={<InductionCooktops />} />
-                <Route path="" element={<MicrowaveOvens />} />
-                <Route path="" element={<MixerGrinders />} />
-                <Route path="" element={<Toasters />} />
+                <Route path="books/fiction/historicalfiction" element={< HistoricalFiction/>} />
+                <Route path="books/fiction/mystery" element={< Mystery/>} />
+                <Route path="books/fiction/novels" element={<Novels/>} />
+                <Route path="books/fiction/romance" element={<Romance/>} />
+                <Route path="books/fiction/sciFi" element={<SciFi/>} />
               </Route>
 
               {/* non fiction */}
               <Route element={<nonFictionlayout />}>
-                <Route path="" element={<CarStereos />} />
-                <Route path="" element={<DashCams />} />
-                <Route path="" element={<ParkingCameras />} />
-                <Route path="" element={<CarChargers />} />
-                <Route path="" element={<CarAirPurifiers />} />
+                <Route path="books/nonfiction/biographies" element={<Biographies/>} />
+                <Route path="books/nonfiction/fitness" element={<Fitness/>} />
+                <Route path="books/nonfiction/selfhelp" element={<SelfHelp/>} />
+                <Route path="books/nonfiction/travel" element={<Travel/>} />
+                <Route path="books/nonfiction/truecrime" element={<TrueCrime/>} />
               </Route>
             </Route>
           </Route>

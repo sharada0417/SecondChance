@@ -11,11 +11,11 @@ const Art = () => {
           <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
             <div className="flex flex-wrap justify-center gap-6">
               {[ 
-                { label: "Headphones", to: "/electronic/audioentertainment/headphones" },
-                { label: "Bluetooth Speakers", to: "/electronic/audioentertainment/bluetoothspeakers" },
-                { label: "Soundbars", to: "/electronic/audioentertainment/soundbars" },
-                { label: "Microphones", to: "/electronic/audioentertainment/microphones" },
-                { label: "Audio Interfaces", to: "/electronic/audioentertainment/audiointerfaces" },
+                { label: "ArtCraft", to: "books/art/artCraft" },
+                { label: "DIYProject", to: "books/art/dIYProject" },
+                { label: "Gardening", to: "books/art/gardening" },
+                { label: "Music", to: "books/art/music" },
+                { label: "Photograpy", to: "books/art/photograpy" },
               ].map((item, index) => (
                 <Link
                   key={index}
