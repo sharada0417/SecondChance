@@ -1,15 +1,11 @@
 import React from 'react';
 import { Link } from "react-router";
+import EHeader from './EHeader';
 
 const ComputersAccessories = () => {
   return (
     <>
-      {/* Header Section */}
-      <div className="flex flex-col items-center bg-gradient-to-r from-green-400 via-green-500 to-green-600 p-8 shadow-2xl">
-        <h3 className="text-4xl font-extrabold text-white mb-2 drop-shadow-md tracking-wide">
-            Home Electronic
-        </h3>
-      </div>
+     <EHeader/>
 
       {/* Colorful Nav */}
       <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
