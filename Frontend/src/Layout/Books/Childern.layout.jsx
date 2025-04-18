@@ -1,11 +1,13 @@
+import Childern from '@/pages/Books/Childern'
 import React from 'react'
 import { Outlet } from 'react-router'
 
-const Childernlayout = () => {
+function Childernlayout  ()  {
   return (
-    <div>
+    <>
+        <Childern/>
        <Outlet/>
-    </div>
+    </>
   )
 }
 

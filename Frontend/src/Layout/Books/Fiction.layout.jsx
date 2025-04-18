@@ -1,7 +1,7 @@
 import Fiction from '@/pages/Books/Fiction'
 import React from 'react'
 import { Outlet } from 'react-router'
-const Fictionlayout = () => {
+function Fictionlayout  ()  {
   return (
     <>
     <Fiction/>

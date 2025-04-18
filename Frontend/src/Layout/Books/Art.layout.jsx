@@ -2,7 +2,7 @@ import Art from '@/pages/Books/Art'
 import React from 'react'
 import { Outlet } from 'react-router'
 
-const Artlayout = () => {
+function Artlayout() {
   return (
     <>
      <Art/>

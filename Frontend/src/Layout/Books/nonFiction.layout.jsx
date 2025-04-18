@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router'
 import nonFictions from '@/pages/Books/nonFiction'
-const nonFictionlayout = () => {
+function nonFictionlayout ()  {
   return (
     <>
     <nonFictions/>

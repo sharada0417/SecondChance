@@ -2,7 +2,7 @@ import Business from '@/pages/Books/Business'
 import React from 'react'
 import { Outlet } from 'react-router'
 
-const Businesslayout = () => {
+function Businesslayout ()  {
   return (
     <>
        <Business/>
