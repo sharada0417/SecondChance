@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TrueCrime = () => {
+const SelfHelp = () => {
   return (
     <div>
       <h1>Hi</h1>
@@ -8,4 +8,4 @@ const TrueCrime = () => {
   )
 }
 
-export default TrueCrime
+export default SelfHelp
