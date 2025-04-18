@@ -11,11 +11,11 @@ const Education = () => {
       <nav className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 shadow-xl">
         <div className="flex flex-wrap justify-center gap-6">
           {[ 
-            { label: "Headphones", to: "/electronic/audioentertainment/headphones" },
-            { label: "Bluetooth Speakers", to: "/electronic/audioentertainment/bluetoothspeakers" },
-            { label: "Soundbars", to: "/electronic/audioentertainment/soundbars" },
-            { label: "Microphones", to: "/electronic/audioentertainment/microphones" },
-            { label: "Audio Interfaces", to: "/electronic/audioentertainment/audiointerfaces" },
+             { label: "Dictionaries", to: "books/education/Dictionaries" },
+             { label: "Exam Guides", to: "books/education/ExamGuides" },
+             { label: "Language Books", to: "books/education/languagebooks" },
+             { label: "Reference manual", to: "books/education/referencemanual" },
+             { label: "Text Books", to: "books/education/textbooks" },
           ].map((item, index) => (
             <Link
               key={index}
