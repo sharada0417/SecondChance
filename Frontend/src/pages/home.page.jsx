@@ -22,7 +22,7 @@ const components1 = [
 ];
 
 const components2 = [
-  { title: "🛏️ Bedroom Furniture", href: "/docs/primitives/alert-dialog" },
+  { title: "🛏️ Bedroom Furniture", href: "/electronic/audioentertainment/headphones" },
   { title: "🛋️ Living Room Furniture", href: "/docs/primitives/hover-card" },
   { title: "🍽️ Dining Room Furniture", href: "/docs/primitives/progress" },
   { title: "💼 Office Furniture", href: "/docs/primitives/scroll-area" },
