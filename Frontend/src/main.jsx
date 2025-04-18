@@ -99,10 +99,11 @@ import OfficeChairs from "./pages/Furnitures/OfficeRoom/OfficeChairs";
 import OfficeTables from "./pages/Furnitures/OfficeRoom/OfficeTables";
 import Workstations from "./pages/Furnitures/OfficeRoom/Workstations";
 import GardenTables from "./pages/Furnitures/OutDoor/GardenTables";
-import Hammocks from "./pages/Furnitures/OutDoor/Hammocks";
+
 import OutdoorBenches from "./pages/Furnitures/OutDoor/OutdoorBenches";
 import OutdoorSwings from "./pages/Furnitures/OutDoor/OutdoorSwings";
 import PatioSets from "./pages/Furnitures/OutDoor/PatioSets";
+import Hammocks from "./pages/Furnitures/OutDoor/Hammocks";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -236,7 +237,7 @@ createRoot(document.getElementById("root")).render(
               {/* OutDoor */}
               <Route element={<OutDoorlayout />}>
                 <Route path="/furnitures/outdoor/gardentables" element={<GardenTables />} />
-                <Route path="/furnitures/outdoor/hammocks " element={<Hammocks />} />
+                <Route path="/furnitures/outdoor/hammocks " element={<Hammocks/>} />
                 <Route path="/furnitures/outdoor/outdoorbenches" element={<OutdoorBenches />} />
                 <Route path="/furnitures/outdoor/outdoorswings" element={<OutdoorSwings />} />
                 <Route path="/furnitures/outdoor/patiosets" element={<PatioSets />} />
