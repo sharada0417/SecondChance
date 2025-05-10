@@ -1,7 +1,6 @@
 package dto;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -15,12 +14,13 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderItemDto {
+public class UserDto {
 	private Long id;
-	private int quantity;
-	private BigDecimal price;
-	private String status;
-	private UserDto user;
-	private ProductDto product;
-	private LocalDateTime createdAt;
+	private String name;
+	private String email;
+	private String phoneNumber;
+	private String password;
+	private String role;
+	private List<OrderItemDto> orderIteamList;
+	private AddressDto address;
 }
