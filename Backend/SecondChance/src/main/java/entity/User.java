@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.joda.time.LocalDateTime;
 
+import enums.UserRole;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
