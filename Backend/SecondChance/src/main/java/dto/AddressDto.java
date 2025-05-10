@@ -23,17 +23,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AddressDto {
 	
-	private Long id;
-	
-	private String street;
-	private String city;
-	private String state;
-	private String zipcode;
-	private String country;
-	
-	
-	private UserDto user;
-	
-	
-	private LocalDateTime createdAt ;
+	 private Long id;
+
+	    private String street;
+	    private String city;
+	    private String state;
+	    private String zipCode;
+	    private String country;
+
+	    private UserDto user;
+
+	    private  LocalDateTime createdAt;
 }

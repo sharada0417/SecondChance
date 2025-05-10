@@ -15,12 +15,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDto {
-	private Long id;
-	private String name;
-	private String email;
-	private String phoneNumber;
-	private String password;
-	private String role;
-	private List<OrderItemDto> orderIteamList;
-	private AddressDto address;
+	 private Long id;
+	    private String email;
+	    private String name;
+	    private String phoneNumber;
+	    private String password;
+	    private String role;
+	    private List<OrderItemDto> orderItemList;
+	    private AddressDto address;
 }

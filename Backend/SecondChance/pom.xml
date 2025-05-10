@@ -90,6 +90,12 @@
     <artifactId>jjwt-api</artifactId>
     <version>0.12.6</version>
 </dependency>
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.30</version> <!-- or latest -->
+    <scope>provided</scope>
+</dependency>
     <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3 -->
 <dependency>
     <groupId>com.amazonaws</groupId>
