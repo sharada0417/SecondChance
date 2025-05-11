@@ -19,47 +19,46 @@ import java.util.function.Function;
 @Service
 @Slf4j
 public class JwtUtils {
-	private static final long EXPIRATION_TIME_IN_MILISEC = 1000L * 60L * 60L * 24L *30L * 6L;
-	
-	private SecretKey key;
-	
-	@Value("${secreteJwtString")
-	private String secreteJwString;
-	
-	  @PostConstruct
-	    private void init(){
-	        byte[] keyBytes = secreteJwString.getBytes(StandardCharsets.UTF_8);
-	        this.key = new SecretKeySpec(keyBytes, "HmacSHA256");
-	    }
+	private static final long EXPIRATION_TIME_IN_MILLISEC = 1000L * 60L *60L *24L * 30L * 6L; //expirers 6 months
+    private SecretKey key;
 
-	    public String generateToken(User user){
-	        String username = user.getEmail();
-	        return generateToken(username);
-	    }
+    @Value("${secreteJwtString}")
+    private String secreteJwtString; //Make sure the value in the application properties is 32characters or long
 
-	    public String generateToken(String username){
-	        return Jwts.builder()
-	                .subject(username)
-	                .issuedAt(new Date(System.currentTimeMillis()))
-	                .expiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME_IN_MILLISEC))
-	                .signWith(key)
-	                .compact();
-	    }
+    @PostConstruct
+    private void init(){
+        byte[] keyBytes = secreteJwtString.getBytes(StandardCharsets.UTF_8);
+        this.key = new SecretKeySpec(keyBytes, "HmacSHA256");
+    }
 
-	    public String getUsernameFromToken(String token){
-	        return extractClaims(token, Claims::getSubject);
-	    }
+    public String generateToken(User user){
+        String username = user.getEmail();
+        return generateToken(username);
+    }
 
-	    private <T> T extractClaims(String token, Function<Claims, T> claimsTFunction){
-	        return claimsTFunction.apply(Jwts.parser().verifyWith(key).build().parseSignedClaims(token).getPayload());
-	    }
+    public String generateToken(String username){
+        return Jwts.builder()
+                .subject(username)
+                .issuedAt(new Date(System.currentTimeMillis()))
+                .expiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME_IN_MILLISEC))
+                .signWith(key)
+                .compact();
+    }
 
-	    public boolean isTokenValid(String token, UserDetails userDetails){
-	        final String username = getUsernameFromToken(token);
-	        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
-	    }
+    public String getUsernameFromToken(String token){
+        return extractClaims(token, Claims::getSubject);
+    }
 
-	    private boolean isTokenExpired(String token){
-	        return extractClaims(token, Claims::getExpiration).before(new Date());
-	    }
+    private <T> T extractClaims(String token, Function<Claims, T> claimsTFunction){
+        return claimsTFunction.apply(Jwts.parser().verifyWith(key).build().parseSignedClaims(token).getPayload());
+    }
+
+    public boolean isTokenValid(String token, UserDetails userDetails){
+        final String username = getUsernameFromToken(token);
+        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+    }
+
+    private boolean isTokenExpired(String token){
+        return extractClaims(token, Claims::getExpiration).before(new Date());
+    }
 }

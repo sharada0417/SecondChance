@@ -16,11 +16,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderItemDto {
-	private Long id;
-	private int quantity;
-	private BigDecimal price;
-	private String status;
-	private UserDto user;
-	private ProductDto product;
-	private LocalDateTime createdAt;
+    private Long id;
+    private int quantity;
+    private BigDecimal price;
+    private String status;
+    private UserDto user;
+    private ProductDto product;
+    private LocalDateTime createdAt;
 }

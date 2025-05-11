@@ -13,7 +13,7 @@ import java.util.List;
 public class Response {
     private int status;
     private String message;
-    private LocalDateTime timestamp; // Removed 'final'
+    private LocalDateTime timestamp;
 
     private String token;
     private String role;
