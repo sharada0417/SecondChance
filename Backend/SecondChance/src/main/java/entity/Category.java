@@ -23,5 +23,6 @@ public class Category {
 	    private List<Product> productList;
 
 	    @Column(name = "created_at")
-	    private final LocalDateTime createdAt = LocalDateTime.now(); 
+	    private final LocalDateTime createdAt = LocalDateTime.now();
+
 }
