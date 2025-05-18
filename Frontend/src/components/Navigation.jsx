@@ -19,6 +19,9 @@ function Navigation() {
       </div>
 
       <div className="flex items-center space-x-8">
+        <Link to="/sign-up" className="text-base hover:text-yellow-300 transition-all">
+          Sign-up
+        </Link>
         <Link to="/sign-in" className="text-base hover:text-yellow-300 transition-all">
           Sign-in
         </Link>
