@@ -31,7 +31,11 @@ const SignIn = () => {
       {/* Form Side */}
       <div className="w-full md:w-1/2 flex items-center justify-center px-8">
         <div className="w-full max-w-md">
-          <h2 className="text-3xl font-bold mb-6 text-center">Sign In</h2>
+           <h2 className="text-3xl font-bold mb-4 text-center text-gray-800">Sign In</h2>
+            <p className="text-center text-gray-600 text-sm mb-6">
+                Welcome to SecondChance World's best
+                SecondHandGoods platform. Please sign up first.
+            </p>
 
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
