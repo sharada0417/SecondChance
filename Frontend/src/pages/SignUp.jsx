@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import {
   Form,
@@ -11,31 +11,35 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { toast } from "sonner";
 import SeconchanceImg from "./../assets/signInpage.png";
 import { useRegisterMutation } from '../lib/api/authApi';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
   const form = useForm({
     defaultValues: {
       email: "",
       name: "",
-      phonenumber: "",
+      phoneNumber: "", // Changed to camelCase
       password: "",
       role: "",
     },
   });
 
   const [register, { isLoading }] = useRegisterMutation();
-  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     try {
       const response = await register(data).unwrap();
       console.log("Registration successful:", response);
-      // Add logic here, e.g., redirect, show success message
+      
+      toast.success("Account created successfully! Redirecting to login...");
+      setTimeout(() => navigate('/'), 2000);
     } catch (error) {
       console.error("Registration failed:", error);
-      setError("Registration failed. Please try again.");
+      toast.error(error.data?.message || "Registration failed. Please check your information.");
     }
   };
 
@@ -57,19 +61,29 @@ const SignUp = () => {
           <p className="text-center text-gray-600 text-sm mb-6">
             Welcome to <span className="font-semibold text-blue-600">SecondChance</span>, the world's best <span className="font-semibold">SecondHandGoods</span> platform. Please sign up.
           </p>
-          {error && <div className="text-sm text-red-500 mb-4">{error}</div>}
+          
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
               {/* Name */}
               <FormField
                 control={form.control}
                 name="name"
-                rules={{ required: "Name is required" }}
+                rules={{ 
+                  required: "Name is required",
+                  minLength: {
+                    value: 2,
+                    message: "Name must be at least 2 characters"
+                  }
+                }}
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel>Full Name</FormLabel>
                     <FormControl>
-                      <Input type="text" placeholder="Enter your name" {...field} />
+                      <Input 
+                        type="text" 
+                        placeholder="Enter your full name" 
+                        {...field} 
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -80,12 +94,22 @@ const SignUp = () => {
               <FormField
                 control={form.control}
                 name="email"
-                rules={{ required: "Email is required" }}
+                rules={{ 
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Invalid email address"
+                  }
+                }}
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input type="email" placeholder="Enter your email" {...field} />
+                      <Input 
+                        type="email" 
+                        placeholder="Enter your email" 
+                        {...field} 
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -95,13 +119,23 @@ const SignUp = () => {
               {/* Phone Number */}
               <FormField
                 control={form.control}
-                name="phonenumber"
-                rules={{ required: "Phone number is required" }}
+                name="phoneNumber" // Corrected field name
+                rules={{ 
+                  required: "Phone number is required",
+                  pattern: {
+                    value: /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im,
+                    message: "Invalid phone number format"
+                  }
+                }}
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Phone Number</FormLabel>
                     <FormControl>
-                      <Input type="tel" placeholder="Enter your phone number" {...field} />
+                      <Input 
+                        type="tel" 
+                        placeholder="Enter your phone number" 
+                        {...field} 
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -117,7 +151,10 @@ const SignUp = () => {
                   <FormItem>
                     <FormLabel>Role</FormLabel>
                     <FormControl>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <Select 
+                        onValueChange={field.onChange} 
+                        value={field.value}
+                      >
                         <SelectTrigger>
                           <SelectValue placeholder="Select a role" />
                         </SelectTrigger>
@@ -136,12 +173,22 @@ const SignUp = () => {
               <FormField
                 control={form.control}
                 name="password"
-                rules={{ required: "Password is required" }}
+                rules={{ 
+                  required: "Password is required",
+                  minLength: {
+                    value: 6,
+                    message: "Password must be at least 6 characters"
+                  }
+                }}
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input type="password" placeholder="Enter your password" {...field} />
+                      <Input 
+                        type="password" 
+                        placeholder="Enter your password" 
+                        {...field} 
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -149,8 +196,12 @@ const SignUp = () => {
               />
 
               {/* Submit Button */}
-              <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? "Signing Up..." : "Sign Up"}
+              <Button 
+                type="submit" 
+                className="w-full" 
+                disabled={isLoading}
+              >
+                {isLoading ? "Creating Account..." : "Create Account"}
               </Button>
             </form>
           </Form>

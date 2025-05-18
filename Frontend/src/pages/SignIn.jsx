@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -10,8 +10,10 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { toast } from "sonner"; // Import Sonner toast
 import SeconchanceImg from "./../assets/signInpage.png";
 import { useLoginMutation } from '../lib/api/authApi';
+import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
   const form = useForm({
@@ -22,16 +24,24 @@ const SignIn = () => {
   });
 
   const [login, { isLoading }] = useLoginMutation();
-  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     try {
       const response = await login(data).unwrap();
       console.log("Login successful:", response);
-      // Add logic here, e.g., store token, redirect
+      
+      toast.success("You have logged in successfully!", {
+        duration: 3000,
+      });
+      
+      navigate('/');
     } catch (error) {
       console.error("Login failed:", error);
-      setError("Login failed. Please check your credentials.");
+      
+      toast.error("Login failed. Please check your credentials.", {
+        duration: 3000,
+      });
     }
   };
 
@@ -53,7 +63,6 @@ const SignIn = () => {
           <p className="text-center text-gray-600 text-sm mb-6">
             Welcome to <span className="font-semibold text-blue-600">SecondChance</span>, the world's best <span className="font-semibold">SecondHandGoods</span> platform. Please sign in first.
           </p>
-          {error && <div className="text-sm text-red-500 mb-4">{error}</div>}
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
               {/* Email */}
