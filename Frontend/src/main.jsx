@@ -7,7 +7,7 @@ import Homepage from "./pages/home.page";
 import RootLayout from "./Layout/root-layout.layout";
 import MainLayout from "./Layout/main.layout";
 import "./index.css";
-import { store } from "./redux/store";
+
 import MobileAcc from "./pages/Electronic/MobileAcc.jsx";
 import MobilePhones from "./pages/Electronic/MobileAcc/MobilePhones.jsx";
 import ChargesAndCovers from "./pages/Electronic/MobileAcc/ChargesAndCovers.jsx";
@@ -168,6 +168,8 @@ import Travel from "./pages/Books/non-Fiction/Travel";
 import TrueCrime from "./pages/Books/non-Fiction/TrueCrime";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import { store } from "./lib/store";
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

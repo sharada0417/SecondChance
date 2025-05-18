@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import {
   Form,
@@ -12,20 +12,31 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import SeconchanceImg from "./../assets/signInpage.png";
+import { useRegisterMutation } from '../lib/api/authApi';
 
 const SignUp = () => {
   const form = useForm({
     defaultValues: {
-      name: "",
       email: "",
+      name: "",
       phonenumber: "",
-      role: "",
       password: "",
+      role: "",
     },
   });
 
-  const onSubmit = (data) => {
-    console.log("Form Submitted as Array:", Object.values(data)); // show as array
+  const [register, { isLoading }] = useRegisterMutation();
+  const [error, setError] = useState('');
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await register(data).unwrap();
+      console.log("Registration successful:", response);
+      // Add logic here, e.g., redirect, show success message
+    } catch (error) {
+      console.error("Registration failed:", error);
+      setError("Registration failed. Please try again.");
+    }
   };
 
   return (
@@ -41,14 +52,12 @@ const SignUp = () => {
 
       {/* Form Side */}
       <div className="w-full md:w-1/2 flex items-center justify-center px-8">
-  <div className="w-full max-w-md mt-10">
-    <h2 className="text-3xl font-bold mb-4 text-center text-gray-800">Sign Up</h2>
-    <p className="text-center text-gray-600 text-sm mb-6">
-      Welcome to SecondChance World's best
-      SecondHandGoods platform. Please sign in first.
-    </p>
-    {/* Form starts here */}
-
+        <div className="w-full max-w-md mt-10">
+          <h2 className="text-3xl font-bold mb-4 text-center text-gray-800">Sign Up</h2>
+          <p className="text-center text-gray-600 text-sm mb-6">
+            Welcome to <span className="font-semibold text-blue-600">SecondChance</span>, the world's best <span className="font-semibold">SecondHandGoods</span> platform. Please sign up.
+          </p>
+          {error && <div className="text-sm text-red-500 mb-4">{error}</div>}
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
               {/* Name */}
@@ -113,8 +122,8 @@ const SignUp = () => {
                           <SelectValue placeholder="Select a role" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="Admin">Admin</SelectItem>
-                          <SelectItem value="User">User</SelectItem>
+                          <SelectItem value="ADMIN">Admin</SelectItem>
+                          <SelectItem value="USER">User</SelectItem>
                         </SelectContent>
                       </Select>
                     </FormControl>
@@ -139,8 +148,9 @@ const SignUp = () => {
                 )}
               />
 
-              <Button type="submit" className="w-full">
-                Sign Up
+              {/* Submit Button */}
+              <Button type="submit" className="w-full" disabled={isLoading}>
+                {isLoading ? "Signing Up..." : "Sign Up"}
               </Button>
             </form>
           </Form>
