@@ -166,6 +166,7 @@ import Fitness from "./pages/Books/non-Fiction/Fitness";
 import SelfHelp from "./pages/Books/non-Fiction/SelfHelp";
 import Travel from "./pages/Books/non-Fiction/Travel";
 import TrueCrime from "./pages/Books/non-Fiction/TrueCrime";
+import SignIn from "./pages/SignIn";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -175,7 +176,7 @@ createRoot(document.getElementById("root")).render(
           <Route element={<RootLayout />}>
             <Route element={<MainLayout />}>
               <Route path="/" element={<Homepage />} />
-
+              <Route path="/sign-in" element={<SignIn />} />
 
 
               {/*------------- Electronic section ---------------------------*/}

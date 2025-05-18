@@ -7,21 +7,27 @@ import lombok.Data;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Data
-@Entity
-@Table(name = "categories")
-public class Category {
 
+
+import lombok.Data;
+
+import java.util.List;
+
+@Entity
+@Data
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(unique = true)
     private String name;
 
-    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Product> productList;
+    @ManyToOne
+    @JoinColumn(name = "parent_id")
+    private Category parent;
 
-    @Column(name = "created_at")
-    private final LocalDateTime createdAt = LocalDateTime.now();
+    @OneToMany(mappedBy = "parent")
+    private List<Category> subcategories;
+
+    @OneToMany(mappedBy = "category")
+    private List<Product> products;
 }

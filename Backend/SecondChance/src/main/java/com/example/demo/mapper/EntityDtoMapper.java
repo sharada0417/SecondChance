@@ -1,7 +1,6 @@
 package com.example.demo.mapper;
 
 import org.springframework.stereotype.Component;
-
 import com.example.demo.dto.AddressDto;
 import com.example.demo.dto.CategoryDto;
 import com.example.demo.dto.OrderItemDto;
@@ -21,10 +20,8 @@ import java.util.stream.Collectors;
 @Component
 public class EntityDtoMapper {
 
-
-    //user entity to user DTO
-
-    public UserDto mapUserToDtoBasic(User user){
+    // user entity to user DTO
+    public UserDto mapUserToDtoBasic(User user) {
         UserDto userDto = new UserDto();
         userDto.setId(user.getId());
         userDto.setPhoneNumber(user.getPhoneNumber());
@@ -32,11 +29,10 @@ public class EntityDtoMapper {
         userDto.setRole(user.getRole().name());
         userDto.setName(user.getName());
         return userDto;
-
     }
 
-    //Address to DTO Basic
-    public AddressDto mapAddressToDtoBasic(Address address){
+    // Address to DTO Basic
+    public AddressDto mapAddressToDtoBasic(Address address) {
         AddressDto addressDto = new AddressDto();
         addressDto.setId(address.getId());
         addressDto.setCity(address.getCity());
@@ -47,17 +43,27 @@ public class EntityDtoMapper {
         return addressDto;
     }
 
-    //Category to DTO basic
-    public CategoryDto mapCategoryToDtoBasic(Category category){
+    public CategoryDto mapCategoryToDtoBasic(Category category) {
         CategoryDto categoryDto = new CategoryDto();
         categoryDto.setId(category.getId());
         categoryDto.setName(category.getName());
+        categoryDto.setParentId(category.getParent() != null ? category.getParent().getId() : null);
         return categoryDto;
     }
 
+    // New method for hierarchical mapping
+    public CategoryDto mapCategoryToDtoWithSubcategories(Category category) {
+        CategoryDto categoryDto = mapCategoryToDtoBasic(category);
+        if (category.getSubcategories() != null && !category.getSubcategories().isEmpty()) {
+            categoryDto.setSubcategories(category.getSubcategories().stream()
+                .map(this::mapCategoryToDtoWithSubcategories)
+                .collect(Collectors.toList()));
+        }
+        return categoryDto;
+    }
 
-    //OrderItem to DTO Basics
-    public OrderItemDto mapOrderItemToDtoBasic(OrderItem orderItem){
+    // OrderItem to DTO Basics
+    public OrderItemDto mapOrderItemToDtoBasic(OrderItem orderItem) {
         OrderItemDto orderItemDto = new OrderItemDto();
         orderItemDto.setId(orderItem.getId());
         orderItemDto.setQuantity(orderItem.getQuantity());
@@ -67,8 +73,8 @@ public class EntityDtoMapper {
         return orderItemDto;
     }
 
-    //Product to DTO Basic
-    public ProductDto mapProductToDtoBasic(Product product){
+    // Product to DTO Basic
+    public ProductDto mapProductToDtoBasic(Product product) {
         ProductDto productDto = new ProductDto();
         productDto.setId(product.getId());
         productDto.setName(product.getName());
@@ -78,24 +84,19 @@ public class EntityDtoMapper {
         return productDto;
     }
 
-    public UserDto mapUserToDtoPlusAddress(User user){
-
+    public UserDto mapUserToDtoPlusAddress(User user) {
         System.out.println("mapUserToDtoPlusAddress is called");
         UserDto userDto = mapUserToDtoBasic(user);
-        if (user.getAddress() != null){
-
+        if (user.getAddress() != null) {
             AddressDto addressDto = mapAddressToDtoBasic(user.getAddress());
             userDto.setAddress(addressDto);
-
         }
         return userDto;
     }
 
-
-    //orderItem to DTO plus product
-    public OrderItemDto mapOrderItemToDtoPlusProduct(OrderItem orderItem){
+    // orderItem to DTO plus product
+    public OrderItemDto mapOrderItemToDtoPlusProduct(OrderItem orderItem) {
         OrderItemDto orderItemDto = mapOrderItemToDtoBasic(orderItem);
-
         if (orderItem.getProduct() != null) {
             ProductDto productDto = mapProductToDtoBasic(orderItem.getProduct());
             orderItemDto.setProduct(productDto);
@@ -103,23 +104,19 @@ public class EntityDtoMapper {
         return orderItemDto;
     }
 
-
-    //OrderItem to DTO plus product and user
-    public OrderItemDto mapOrderItemToDtoPlusProductAndUser(OrderItem orderItem){
+    // OrderItem to DTO plus product and user
+    public OrderItemDto mapOrderItemToDtoPlusProductAndUser(OrderItem orderItem) {
         OrderItemDto orderItemDto = mapOrderItemToDtoPlusProduct(orderItem);
-
-        if (orderItem.getUser() != null){
+        if (orderItem.getUser() != null) {
             UserDto userDto = mapUserToDtoPlusAddress(orderItem.getUser());
             orderItemDto.setUser(userDto);
         }
         return orderItemDto;
     }
 
-
-    //USer to DTO with Address and Order Items History
+    // User to DTO with Address and Order Items History
     public UserDto mapUserToDtoPlusAddressAndOrderHistory(User user) {
         UserDto userDto = mapUserToDtoPlusAddress(user);
-
         if (user.getOrderItemList() != null && !user.getOrderItemList().isEmpty()) {
             userDto.setOrderItemList(user.getOrderItemList()
                     .stream()
@@ -127,11 +124,5 @@ public class EntityDtoMapper {
                     .collect(Collectors.toList()));
         }
         return userDto;
-
     }
-
-
-
-
-
 }

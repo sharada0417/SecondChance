@@ -1,14 +1,13 @@
 package com.example.demo.controller;
 
-import lombok.RequiredArgsConstructor;
-
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
-
+import com.example.demo.dto.CategoryCreateRequest;
 import com.example.demo.dto.CategoryDto;
 import com.example.demo.dto.Response;
 import com.example.demo.service.interf.CategoryService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/category")
@@ -19,44 +18,31 @@ public class CategoryController {
 
     @PostMapping("/create")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public ResponseEntity<Response> createCategory(@RequestBody CategoryDto categoryDto){
-        return ResponseEntity.ok(categoryService.createCategory(categoryDto));
+    public ResponseEntity<Response> create(@RequestBody CategoryCreateRequest request) {
+        return ResponseEntity.ok(categoryService.createCategory(request));
+    }
+
+    @PutMapping("/update/{id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public ResponseEntity<Response> update(
+            @PathVariable Long id,
+            @RequestBody CategoryDto dto) {
+        return ResponseEntity.ok(categoryService.updateCategory(id, dto));
     }
 
     @GetMapping("/get-all")
-    public ResponseEntity<Response> getAllCategories(){
+    public ResponseEntity<Response> getAll() {
         return ResponseEntity.ok(categoryService.getAllCategories());
     }
 
-    @PutMapping("/update/{categoryId}")
+    @GetMapping("/get-category-by-id/{id}")
+    public ResponseEntity<Response> getOne(@PathVariable Long id) {
+        return ResponseEntity.ok(categoryService.getCategoryById(id));
+    }
+
+    @DeleteMapping("/delete/{id}")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public ResponseEntity<Response> updateCategory(@PathVariable Long categoryId, @RequestBody CategoryDto categoryDto){
-        return ResponseEntity.ok(categoryService.updateCategory(categoryId, categoryDto));
+    public ResponseEntity<Response> delete(@PathVariable Long id) {
+        return ResponseEntity.ok(categoryService.deleteCategory(id));
     }
-
-    @DeleteMapping("/delete/{categoryId}")
-    @PreAuthorize("hasAuthority('ADMIN')")
-    public ResponseEntity<Response> deleteCategory(@PathVariable Long categoryId){
-        return ResponseEntity.ok(categoryService.deleteCategory(categoryId));
-    }
-
-    @GetMapping("/get-category-by-id/{categoryId}")
-    public ResponseEntity<Response> getCategoryById(@PathVariable Long categoryId){
-        return ResponseEntity.ok(categoryService.getCategoryById(categoryId));
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
