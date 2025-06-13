@@ -40,7 +40,7 @@ public class ProductServiceImpl implements ProductService {
             String name,
             String description,
             BigDecimal price,
-            LocalDate recycleDate // Added parameter
+            LocalDate recycleDate
     ) {
         Category parent = categoryRepo.findById(categoryId)
                 .orElseThrow(() -> new NotFoundException("Parent category not found"));
@@ -49,7 +49,7 @@ public class ProductServiceImpl implements ProductService {
         if (children == null || subid < 1 || subid > children.size()) {
             throw new NotFoundException("Subcategory does not belong to given parent");
         }
-        Category child = children.get((int) (subid - 1));
+        Category child = children.get(subid.intValue() - 1);
 
         String productImageUrl = awsS3Service.saveImageToS3(image);
 
@@ -59,7 +59,7 @@ public class ProductServiceImpl implements ProductService {
         product.setName(name);
         product.setDescription(description);
         product.setImageUrl(productImageUrl);
-        product.setRecycleDate(recycleDate); // Set the new field
+        product.setRecycleDate(recycleDate);
 
         productRepo.save(product);
 
@@ -85,18 +85,15 @@ public class ProductServiceImpl implements ProductService {
         if (categoryId != null && subid != null) {
             Category parent = categoryRepo.findById(categoryId)
                     .orElseThrow(() -> new NotFoundException("Parent category not found"));
-
             List<Category> children = parent.getSubcategories();
             if (children == null || subid < 1 || subid > children.size()) {
                 throw new NotFoundException("Subcategory does not belong to given parent");
             }
-            Category child = children.get((int) (subid - 1));
-            product.setCategory(child);
+            product.setCategory(children.get(subid.intValue() - 1));
         }
 
         if (image != null && !image.isEmpty()) {
-            String newImageUrl = awsS3Service.saveImageToS3(image);
-            product.setImageUrl(newImageUrl);
+            product.setImageUrl(awsS3Service.saveImageToS3(image));
         }
         if (name != null) {
             product.setName(name);
@@ -131,9 +128,7 @@ public class ProductServiceImpl implements ProductService {
     public Response getProductById(Long productId) {
         Product product = productRepo.findById(productId)
                 .orElseThrow(() -> new NotFoundException("Product not found"));
-
         ProductDto productDto = entityDtoMapper.mapProductToDtoBasic(product);
-
         return Response.builder()
                 .status(200)
                 .product(productDto)
@@ -146,7 +141,6 @@ public class ProductServiceImpl implements ProductService {
                 .stream()
                 .map(entityDtoMapper::mapProductToDtoBasic)
                 .collect(Collectors.toList());
-
         return Response.builder()
                 .status(200)
                 .productList(productList)
@@ -156,15 +150,12 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Response getProductsByCategory(Long categoryId) {
         List<Product> products = productRepo.findByCategoryId(categoryId);
-
         if (products.isEmpty()) {
             throw new NotFoundException("No products found for this category");
         }
-
         List<ProductDto> productDtoList = products.stream()
                 .map(entityDtoMapper::mapProductToDtoBasic)
                 .collect(Collectors.toList());
-
         return Response.builder()
                 .status(200)
                 .productList(productDtoList)
@@ -175,22 +166,17 @@ public class ProductServiceImpl implements ProductService {
     public Response getProductsBySubcategory(Long categoryId, Long subid) {
         Category parent = categoryRepo.findById(categoryId)
                 .orElseThrow(() -> new NotFoundException("Parent category not found"));
-
         List<Category> children = parent.getSubcategories();
         if (children == null || subid < 1 || subid > children.size()) {
             throw new NotFoundException("Subcategory does not belong to given parent");
         }
-        Category child = children.get((int) (subid - 1));
-
-        List<Product> products = productRepo.findByCategoryId(child.getId());
+        List<Product> products = productRepo.findByCategoryId(children.get(subid.intValue() - 1).getId());
         if (products.isEmpty()) {
             throw new NotFoundException("No products found in this subcategory");
         }
-
         List<ProductDto> productDtoList = products.stream()
                 .map(entityDtoMapper::mapProductToDtoBasic)
                 .collect(Collectors.toList());
-
         return Response.builder()
             .status(200)
             .productList(productDtoList)
@@ -200,15 +186,12 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Response searchProduct(String searchValue) {
         List<Product> products = productRepo.findByNameContainingOrDescriptionContaining(searchValue, searchValue);
-
         if (products.isEmpty()) {
             throw new NotFoundException("No products found");
         }
-
         List<ProductDto> productDtoList = products.stream()
                 .map(entityDtoMapper::mapProductToDtoBasic)
                 .collect(Collectors.toList());
-
         return Response.builder()
                 .status(200)
                 .productList(productDtoList)

@@ -15,7 +15,7 @@ public interface ProductService {
             String name,
             String description,
             BigDecimal price,
-            LocalDate recycleDate // Added parameter
+            LocalDate recycleDate
     );
 
     Response updateProduct(

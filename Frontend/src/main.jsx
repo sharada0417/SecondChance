@@ -175,6 +175,7 @@ import CategoryMangement from "./pages/CategoryMangement";
 import OrderManagement from "./pages/OrderManagement";
 import ProductManagement from "./pages/ProductManagement";
 import UserManagement from "./pages/UserManagement";
+import ProductDetails from "./pages/ProductDetails";
 
 
 createRoot(document.getElementById("root")).render(
@@ -193,6 +194,7 @@ createRoot(document.getElementById("root")).render(
               <Route path="/dashbord/ordermange" element={<OrderManagement/>}/>
               <Route path="/dashbord/productmange" element={<ProductManagement/>}/>
               <Route path="/dashbord/usernamge" element={<UserManagement/>}/>
+               <Route path="/product/:id" element={<ProductDetails />} />
 
               {/*------------- Electronic section ---------------------------*/}
               <Route path="/electronic/mobileacc" element={<MobileAcc />} />
@@ -337,7 +339,7 @@ createRoot(document.getElementById("root")).render(
               <Route element={<Accessorieslayout />}>
                 <Route path="/fashion/accessories/bags" element={<Bags />} />
                 <Route path="/fashion/accessories/belts" element={<Belts />} />
-                <Route path="/fashion/accessories/headphones" element={<HeadPhones />} />
+                <Route path="/fashion/accessories/bands" element={<HeadPhones />} />
                 <Route path="/fashion/accessories/jewelry" element={<Jewelry />} />
                 <Route path="/fashion/accessories/sunglasses" element={<Sunglasses />} />
                 <Route path="/fashion/accessories/watches" element={<Watches />} />

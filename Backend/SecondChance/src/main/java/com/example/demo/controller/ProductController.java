@@ -24,19 +24,18 @@ public class ProductController {
     @PostMapping("/create")
     @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Response> createProduct(
-    	    @RequestParam Long categoryId,
-    	    @RequestParam Long subid,
-    	    @RequestParam MultipartFile image,
-    	    @RequestParam String name,
-    	    @RequestParam String description,
-    	    @RequestParam BigDecimal price,
-    	    @RequestParam String recycledate
-    	) {
+            @RequestParam Long categoryId,
+            @RequestParam Long subid,
+            @RequestParam MultipartFile image,
+            @RequestParam String name,
+            @RequestParam String description,
+            @RequestParam BigDecimal price,
+            @RequestParam String recycledate
+    ) {
         if (categoryId == null || subid == null ||
             image.isEmpty() || name.isEmpty() || description.isEmpty() || price == null || recycledate.isEmpty()) {
             throw new InvalidCredentialsException("All fields are required");
         }
-        // Parse the recycledate string (expected format: "yyyy-MM-dd")
         LocalDate recycleDate = LocalDate.parse(recycledate, DateTimeFormatter.ISO_LOCAL_DATE);
         return ResponseEntity.ok(
                 productService.createProduct(categoryId, subid, image, name, description, price, recycleDate)

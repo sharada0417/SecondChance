@@ -1,3 +1,4 @@
+// src/app/services/productApi.js
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const productApi = createApi({
@@ -6,20 +7,29 @@ export const productApi = createApi({
     baseUrl: 'http://localhost:8080/product/',
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
-      console.log('Token being sent:', token); // Debug log
       if (token) headers.set('Authorization', `Bearer ${token}`);
       return headers;
     },
   }),
   endpoints: (builder) => ({
+    // Fetch list by category
+    getProductsByCategory: builder.query({
+      query: ({ categoryId, subid }) => `get-by-category-id/${categoryId}/${subid}`,
+      transformResponse: (response) => response.productList,
+    }),
+    // Fetch single product by ID
+    getProductById: builder.query({
+      query: (productId) => `get-by-product-id/${productId}`,
+      transformResponse: (response) => response.product,
+    }),
     createProduct: builder.mutation({
-      query: (formData) => ({
-        url: 'create',
-        method: 'POST',
-        body: formData,
-      }),
+      query: (formData) => ({ url: 'create', method: 'POST', body: formData }),
     }),
   }),
 });
 
-export const { useCreateProductMutation } = productApi;
+export const {
+  useGetProductsByCategoryQuery,
+  useGetProductByIdQuery,
+  useCreateProductMutation,
+} = productApi;

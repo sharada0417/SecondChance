@@ -23,5 +23,5 @@ public class ProductDto {
     private BigDecimal price;
     private String imageUrl;
     private CategoryDto category;
-    private LocalDate recycleDate; // Added field
+    private LocalDate recycleDate;
 }
