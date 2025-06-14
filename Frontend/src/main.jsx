@@ -176,6 +176,8 @@ import OrderManagement from "./pages/OrderManagement";
 import ProductManagement from "./pages/ProductManagement";
 import UserManagement from "./pages/UserManagement";
 import ProductDetails from "./pages/ProductDetails";
+import Cart from "./pages/Cart";
+import CartLayout from "./Layout/CartLayout";
 
 
 createRoot(document.getElementById("root")).render(
@@ -195,7 +197,8 @@ createRoot(document.getElementById("root")).render(
               <Route path="/dashbord/productmange" element={<ProductManagement/>}/>
               <Route path="/dashbord/usernamge" element={<UserManagement/>}/>
                <Route path="/product/:id" element={<ProductDetails />} />
-
+               <Route path="/cart" element={<Cart />} />
+               
               {/*------------- Electronic section ---------------------------*/}
               <Route path="/electronic/mobileacc" element={<MobileAcc />} />
               <Route path="/electronic/homeelectronics" element={<HomeElectronics />} />
@@ -204,7 +207,9 @@ createRoot(document.getElementById("root")).render(
               <Route path="/electronic/kitchenappliances" element={<KitchenAppliances />} />
               <Route path="/electronic/carelectronics" element={<CarElectronics />} />
               {/* Mobile Accessories */}
+              
               <Route element={<MobileAcclayout />}>
+              
                 <Route path="/electronic/mobileacc/mobilephone" element={<MobilePhones />} />
                 <Route path="/electronic/mobileacc/charges" element={<ChargesAndCovers />} />
                 <Route path="/electronic/mobileacc/headphones" element={<HeadPhones />} />
@@ -212,6 +217,7 @@ createRoot(document.getElementById("root")).render(
                 <Route path="/electronic/mobileacc/screenprotector" element={<ScreenProtector />} />
                 <Route path="/electronic/mobileacc/smartwatch" element={<SmartWatch />} />
                 <Route path="/electronic/mobileacc/phoneholders" element={<PhoneHolders />} />
+                
               </Route>
               {/* Home Electronics */}
               <Route element={<HomeElectroniclayout />}>
@@ -444,7 +450,8 @@ createRoot(document.getElementById("root")).render(
                 <Route path="books/nonfiction/truecrime" element={<TrueCrime/>} />
               </Route>
             </Route>
-          </Route>
+            </Route>
+          
         </Routes>
       </BrowserRouter>
     </Provider>

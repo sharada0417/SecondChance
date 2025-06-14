@@ -11,7 +11,7 @@ const ProductDetails = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-xl shadow">
-      <Link to="/" className="text-green-600 hover:underline mb-4 inline-block">← Back to products</Link>
+      <Link to="/electronic/mobileacc/mobilephone" className="text-green-600 hover:underline mb-4 inline-block">← Back to products</Link>
       <div className="flex flex-col md:flex-row gap-6">
         <img
           src={product.imageUrl}
