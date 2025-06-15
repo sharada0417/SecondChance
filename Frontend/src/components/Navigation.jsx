@@ -7,9 +7,6 @@ function Navigation() {
         <Link to="/" className="text-2xl font-bold italic font-serif">
           SecondChance
         </Link>
-        <Link to="/home" className="text-base hover:text-yellow-300 transition-all">
-          Home
-        </Link>
         <Link to="/dashbord" className="text-base hover:text-yellow-300 transition-all">
           Dashboard
         </Link>

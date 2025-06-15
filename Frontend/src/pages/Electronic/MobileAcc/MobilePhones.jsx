@@ -1,5 +1,4 @@
-
-
+// src/components/MobilePhones.jsx
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useGetProductsByCategoryQuery } from '@/lib/api/productApi';
@@ -11,7 +10,7 @@ const MobilePhones = ({ categoryId = 1, subid = 1 }) => {
     useGetProductsByCategoryQuery({ categoryId, subid });
 
   if (isLoading) return <p className="p-6">Loading...</p>;
-  if (isError)   return <p className="p-6 text-red-600">Error loading products.</p>;
+  if (isError) return <p className="p-6 text-red-600">Error loading products.</p>;
   if (!products.length) return <p className="p-6">No products found.</p>;
 
   return (
@@ -30,7 +29,7 @@ const MobilePhones = ({ categoryId = 1, subid = 1 }) => {
               key={product.id}
               className="bg-emerald-50 p-4 rounded-xl shadow hover:shadow-lg transition"
             >
-              <Link to={`/product/${product.id}`}>
+              <Link to={`/product/${product.id}`}>  {/* Clickable image */}
                 <img
                   src={product.imageUrl}
                   alt={product.name}
@@ -47,12 +46,13 @@ const MobilePhones = ({ categoryId = 1, subid = 1 }) => {
                 Recycle Date: {product.recycleDate}
               </p>
               <div className="flex justify-between">
-                <button
-                  onClick={e => e.preventDefault() /* handle buy now */}
-                  className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
-                >
-                  Buy Now
-                </button>
+                {/* View Item navigates to ProductDetails */}
+                <Link to={`/product/${product.id}`}>
+                  <button className="border border-green-600 text-green-700 px-4 py-2 rounded hover:bg-green-100 transition">
+                    View Item
+                  </button>
+                </Link>
+
                 <button
                   onClick={e => {
                     e.preventDefault();

@@ -177,7 +177,8 @@ import ProductManagement from "./pages/ProductManagement";
 import UserManagement from "./pages/UserManagement";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
-import CartLayout from "./Layout/CartLayout";
+import SearchPage from "./pages/SearchPage";
+
 
 
 createRoot(document.getElementById("root")).render(
@@ -198,6 +199,7 @@ createRoot(document.getElementById("root")).render(
               <Route path="/dashbord/usernamge" element={<UserManagement/>}/>
                <Route path="/product/:id" element={<ProductDetails />} />
                <Route path="/cart" element={<Cart />} />
+               <Route path="/serch" element={<SearchPage/>}/>
                
               {/*------------- Electronic section ---------------------------*/}
               <Route path="/electronic/mobileacc" element={<MobileAcc />} />

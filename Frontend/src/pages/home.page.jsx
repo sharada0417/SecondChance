@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import * as React from "react";
@@ -48,6 +50,15 @@ const components4 = [
 ];
 
 const Homepage = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    if (searchTerm.trim()) {
+      navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
+    }
+  };
+
   return (
     <>
       <div className="flex flex-col items-center bg-gradient-to-br from-green-400 via-green-500 to-green-600 p-8 shadow-2xl">
@@ -66,9 +77,14 @@ const Homepage = () => {
           <Input
             type="text"
             placeholder="🔍 Search for anything..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 shadow-lg"
           />
-          <Button className="bg-green-700 hover:bg-green-800 text-white rounded-lg px-4 py-2 shadow-md transition-all">
+          <Button
+            onClick={handleSearch}
+            className="bg-green-700 hover:bg-green-800 text-white rounded-lg px-4 py-2 shadow-md transition-all"
+          >
             Search
           </Button>
         </div>

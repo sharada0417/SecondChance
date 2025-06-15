@@ -1,4 +1,3 @@
-// src/app/services/productApi.js
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const productApi = createApi({
@@ -25,6 +24,11 @@ export const productApi = createApi({
     createProduct: builder.mutation({
       query: (formData) => ({ url: 'create', method: 'POST', body: formData }),
     }),
+    // New endpoint for searching products
+    searchProducts: builder.query({
+      query: (searchTerm) => `search?searchValue=${searchTerm}`,
+      transformResponse: (response) => response.productList,
+    }),
   }),
 });
 
@@ -32,4 +36,5 @@ export const {
   useGetProductsByCategoryQuery,
   useGetProductByIdQuery,
   useCreateProductMutation,
+  useSearchProductsQuery, // Added new hook
 } = productApi;

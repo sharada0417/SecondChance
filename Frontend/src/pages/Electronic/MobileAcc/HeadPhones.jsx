@@ -47,12 +47,11 @@ const MobilePhones = ({ categoryId = 1, subid = 3 }) => {
                 Recycle Date: {product.recycleDate}
               </p>
               <div className="flex justify-between">
-                <button
-                  onClick={e => e.preventDefault() /* handle buy now */}
-                  className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
-                >
-                  Buy Now
-                </button>
+                <Link to={`/product/${product.id}`}>
+                                <button className="border border-green-600 text-green-700 px-4 py-2 rounded hover:bg-green-100 transition">
+                                  View Item
+                                 </button>
+                                </Link>
                 <button
                   onClick={e => {
                     e.preventDefault();
