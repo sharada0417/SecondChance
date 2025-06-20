@@ -178,6 +178,8 @@ import UserManagement from "./pages/UserManagement";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
 import SearchPage from "./pages/SearchPage";
+import Contactuspage from "./pages/Contactuspage";
+import AboutUs from "./pages/AboutUs.page";
 
 
 
@@ -200,6 +202,8 @@ createRoot(document.getElementById("root")).render(
                <Route path="/product/:id" element={<ProductDetails />} />
                <Route path="/cart" element={<Cart />} />
                <Route path="/search" element={<SearchPage/>}/>
+               <Route path="/contact" element={<Contactuspage/>}/>
+               <Route path="/aboutus" element={<AboutUs/>}/>
                
               {/*------------- Electronic section ---------------------------*/}
               <Route path="/electronic/mobileacc" element={<MobileAcc />} />

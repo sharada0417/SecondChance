@@ -36,8 +36,8 @@ const Footerpage = () => {
         <div>
           <h3 className="text-yellow-400 uppercase font-bold mb-4 text-lg">Company</h3>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:underline">About Us</a></li>
-            <li><a href="#" className="hover:underline">Contact</a></li>
+            <li><a href="/aboutus" className="hover:underline">About Us</a></li>
+            <li><a href="/contact" className="hover:underline">Contact</a></li>
           </ul>
         </div>
 
