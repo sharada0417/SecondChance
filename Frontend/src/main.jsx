@@ -199,7 +199,7 @@ createRoot(document.getElementById("root")).render(
               <Route path="/dashbord/usernamge" element={<UserManagement/>}/>
                <Route path="/product/:id" element={<ProductDetails />} />
                <Route path="/cart" element={<Cart />} />
-               <Route path="/serch" element={<SearchPage/>}/>
+               <Route path="/search" element={<SearchPage/>}/>
                
               {/*------------- Electronic section ---------------------------*/}
               <Route path="/electronic/mobileacc" element={<MobileAcc />} />
