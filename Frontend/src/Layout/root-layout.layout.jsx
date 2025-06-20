@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import { Outlet } from "react-router-dom";
 import { CartProvider } from "@/pages/CartContext";
 import { Toaster } from "@/components/ui/toaster";
+import Footerpage from "@/pages/Footerpage";
 
 
 function RootLayout() {
@@ -13,6 +14,7 @@ function RootLayout() {
       <Navigation />
       <Outlet />
        <Toaster />
+       <Footerpage/>
     </CartProvider>
   );
 }
