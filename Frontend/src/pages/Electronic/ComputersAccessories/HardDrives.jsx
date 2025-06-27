@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useGetProductsByCategoryQuery } from '@/lib/api/productApi';
 import { CartContext } from '@/pages/CartContext';
 
-const HardDrives = ({ categoryId = 15, subid = 4 }) => {
+const HardDrives = ({ categoryId = 15, subid = 5 }) => {
   const { addToCart } = useContext(CartContext);
   const { data: products = [], isLoading, isError } =
     useGetProductsByCategoryQuery({ categoryId, subid });

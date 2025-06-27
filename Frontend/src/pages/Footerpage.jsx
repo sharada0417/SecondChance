@@ -6,7 +6,7 @@ import { BiLogoPinterest } from "react-icons/bi";
 
 const Footerpage = () => {
   return (
-    <footer className="bg-[#166835] text-white p-10 text-base mt-3">
+    <footer className="bg-[#166835] text-white p-10 text-base ">
       <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
         {/* Column 1: Contact Info */}
         <div>

@@ -1,4 +1,3 @@
-// src/main/java/com/example/demo/service/interf/CategoryService.java
 package com.example.demo.service.interf;
 
 import com.example.demo.dto.CategoryCreateRequest;

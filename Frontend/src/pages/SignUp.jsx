@@ -55,10 +55,10 @@ const SignUp = () => {
       </div>
 
       {/* Form Side */}
-      <div className="w-full md:w-1/2 flex items-center justify-center px-8">
-        <div className="w-full max-w-md mt-10">
+      <div className="w-full md:w-1/2 flex items-center justify-center px-2">
+        <div className="w-full max-w-md mt-5">
           <h2 className="text-3xl font-bold mb-4 text-center text-gray-800">Sign Up</h2>
-          <p className="text-center text-gray-600 text-sm mb-6">
+          <p className="text-center text-gray-600 text-sm mb-2">
             Welcome to <span className="font-semibold text-blue-600">SecondChance</span>, the world's best <span className="font-semibold">SecondHandGoods</span> platform. Please sign up.
           </p>
           

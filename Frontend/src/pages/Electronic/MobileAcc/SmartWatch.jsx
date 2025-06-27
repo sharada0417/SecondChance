@@ -1,4 +1,3 @@
-// src/components/MobilePhones.jsx
 import React from 'react';
 import { Link } from 'react-router';
 import { useGetProductsByCategoryQuery } from '@/lib/api/productApi';

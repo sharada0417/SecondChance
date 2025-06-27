@@ -1,34 +1,31 @@
 package com.example.demo.entity;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.List;
+   import lombok.Data;
+   import lombok.NoArgsConstructor;
+   import lombok.AllArgsConstructor;
+   import lombok.Builder;
+   import jakarta.persistence.*;
+   import java.math.BigDecimal;
+   import java.util.List;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-import lombok.Data;
+   @Entity
+   @Table(name = "orders")
+   @Data
+   @NoArgsConstructor
+   @AllArgsConstructor
+   @Builder
+   public class Order {
 
-@Data
-@Entity
-@Table(name = "orders")
-public class Order {
+       @Id
+       @GeneratedValue(strategy = GenerationType.IDENTITY)
+       private Long id;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private BigDecimal totalPrice;
-    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY,  cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<OrderItem> orderItemList;
+       @ManyToOne(fetch = FetchType.LAZY)
+       @JoinColumn(name = "user_id", nullable = false)
+       private User user;
 
-    @Column(name = "created_at")
-    private final LocalDateTime createdAt = LocalDateTime.now();
+       private BigDecimal totalPrice;
 
-    //PAYMENT
-}
+       @OneToMany(mappedBy = "order", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+       private List<OrderItem> orderItemList;
+   }

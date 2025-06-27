@@ -180,6 +180,8 @@ import Cart from "./pages/Cart";
 import SearchPage from "./pages/SearchPage";
 import Contactuspage from "./pages/Contactuspage";
 import AboutUs from "./pages/AboutUs.page";
+import PaymentConform from "./pages/Paymentconform";
+import PaymentSuccess from "./pages/PaymentSuccess";
 
 
 
@@ -204,9 +206,11 @@ createRoot(document.getElementById("root")).render(
                <Route path="/search" element={<SearchPage/>}/>
                <Route path="/contact" element={<Contactuspage/>}/>
                <Route path="/aboutus" element={<AboutUs/>}/>
+               <Route path="/payment-conform" element={<PaymentConform />} />
+              <Route path="/payment-success" element={<PaymentSuccess />} />
                
               {/*------------- Electronic section ---------------------------*/}
-              <Route path="/electronic/mobileacc" element={<MobileAcc />} />
+              
               <Route path="/electronic/homeelectronics" element={<HomeElectronics />} />
               <Route path="/electronic/computersaccessories" element={<ComputersAccessories />} />
               <Route path="/electronic/audioentertainment" element={<AudioEntertainment />} />

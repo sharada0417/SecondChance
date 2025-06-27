@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -12,8 +12,10 @@ import {
 } from "@/components/ui/form";
 import { toast } from "sonner"; // Import Sonner toast
 import SeconchanceImg from "./../assets/signInpage.jpg";
-import { useLoginMutation } from '../lib/api/authApi';
+import { useLoginMutation, authApi } from '../lib/api/authApi';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setCredentials } from '../lib/api/authSlice';
 
 const SignIn = () => {
   const form = useForm({
@@ -25,11 +27,18 @@ const SignIn = () => {
 
   const [login, { isLoading }] = useLoginMutation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const onSubmit = async (data) => {
     try {
-      const response = await login(data).unwrap();
-      console.log("Login successful:", response);
+      const loginResponse = await login(data).unwrap();
+      console.log("Login successful:", loginResponse);
+      
+      // Fetch user info after successful login
+      const userInfo = await dispatch(authApi.endpoints.getUserInfo.initiate()).unwrap();
+      
+      // Store token and user in Redux
+      dispatch(setCredentials({ token: loginResponse.token, user: userInfo }));
       
       toast.success("You have logged in successfully!", {
         duration: 3000,
@@ -59,7 +68,7 @@ const SignIn = () => {
       {/* Form Side */}
       <div className="w-full md:w-1/2 flex items-center justify-center px-8">
         <div className="w-full max-w-md">
-          <h2 className="text-3xl font-bold mb-4 text-center text-gray-800">Sign In</h2>
+          <h2 className="text-3xl font-bold mb-2 text-center text-gray-800">Sign In</h2>
           <p className="text-center text-gray-600 text-sm mb-6">
             Welcome to <span className="font-semibold text-blue-600">SecondChance</span>, the world's best <span className="font-semibold">SecondHandGoods</span> platform. Please sign in first.
           </p>

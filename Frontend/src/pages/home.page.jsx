@@ -1,7 +1,8 @@
 import logo from '../assets/logo.png';
 import banner from '../assets/banner.jpg';
 import * as React from "react";
-import { GiRiceCooker, GiManualMeatGrinder, GiBookshelf, GiBookmarklet } from "react-icons/gi";
+import { Link } from 'react-router-dom'; 
+import { GiManualMeatGrinder, GiBookshelf, GiBookmarklet } from "react-icons/gi";
 import { FaMobileAlt, FaLaptop, FaHeadphones, FaCar, FaTshirt, FaShoePrints, FaUserTie, FaBookOpen } from "react-icons/fa";
 import { IoBed, IoTvOutline } from "react-icons/io5";
 import { MdChair, MdOutlineTableBar, MdOutlineWork } from "react-icons/md";
@@ -9,7 +10,6 @@ import { BsFillPeopleFill, BsFillCameraVideoFill } from "react-icons/bs";
 import { BiLeaf } from "react-icons/bi";
 import { PiStudentFill } from "react-icons/pi";
 import { useGetProductsByCategoryQuery } from '@/lib/api/productApi';
-import { Link } from 'react-router-dom';
 
 const Homepage = () => {
   const components1 = [
@@ -49,7 +49,6 @@ const Homepage = () => {
 
   const allComponents = [...components1, ...components2, ...components3, ...components4];
 
-  // Fetch trending products (assuming categoryId: 1, subid: 1 represents trending mobile phones)
   const { data: products = [], isLoading, isError } = useGetProductsByCategoryQuery({ categoryId: 1, subid: 1 });
 
   return (
@@ -60,7 +59,7 @@ const Homepage = () => {
           <img src={logo} alt="Second Chance Logo" className="h-40 w-auto" />
         </div>
         <div className="text-content">
-          <div className="tagline text-3xl font-bold text-black-700 mb-2 mr-5">
+          <div className="tagline text-4xl font-bold text-black-700 mb-2 mr-5">
             Second Chance
           </div>
           <p className="description text-gray-800 text-base leading-relaxed max-w-2xl">
@@ -82,9 +81,11 @@ const Homepage = () => {
               We work closely with trusted sellers and communities to bring you products that are gently used, thoroughly inspected, and ready to serve again. By choosing SecondChance, you're not just making a smart financial decision—you're making a positive impact on the planet.
               Join our growing community of sustainable shoppers and discover the joy of giving things a second life. Thank you for supporting reuse, recycling, and responsible living.
             </p>
-            <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full font-semibold transition">
-              About Us
-            </button>
+            <Link to="/aboutus">
+              <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full font-semibold transition">
+                About Us
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -106,7 +107,7 @@ const Homepage = () => {
 
       {/* Trending Products Section */}
       <div className="trending-section mt-8">
-         <h2 className="text-4xl font-bold text-center text-black h-20">Treding Products</h2>
+        <h2 className="text-4xl font-bold text-center text-black h-20">Trending Products</h2>
         {isLoading ? (
           <p className="text-center p-6">Loading trending products...</p>
         ) : isError ? (
@@ -119,7 +120,7 @@ const Homepage = () => {
               <Link
                 key={product.id}
                 to={`/product/${product.id}`}
-                className="block bg-white p-4 rounded-lg shadow hover:shadow-lg transition"
+                className="block bg-white p-4 rounded-lg border border-green-100 shadow hover:shadow-lg transition"
               >
                 <img
                   src={product.imageUrl}
@@ -142,7 +143,3 @@ const Homepage = () => {
 };
 
 export default Homepage;
-
-
-
-
